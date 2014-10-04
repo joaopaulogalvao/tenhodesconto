@@ -17,7 +17,7 @@
 
 @interface MapViewController (){
     
-    GMSMapView *mapView_;
+//    GMSMapView *mapView_;
 }
 
 
