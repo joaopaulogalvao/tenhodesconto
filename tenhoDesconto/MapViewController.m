@@ -63,26 +63,39 @@
         [self.locationManager requestAlwaysAuthorization];
     }
     
-    
+    // Map will show current location
     self.appleMap.showsUserLocation = YES;
     
+    // Maps' opening spot
     CLLocation *location = [self.locationManager location];
     CLLocationCoordinate2D coordinateActual = [location coordinate];
     
+    // Map's zoom
+    MKCoordinateSpan zoom = MKCoordinateSpanMake(0.010, 0.010);
     
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinateActual.latitude
-                                                            longitude:coordinateActual.longitude
-                                                                 zoom:15];
-    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    mapView_.myLocationEnabled = YES;
-    self.view = mapView_;
+    // Create a region
+    MKCoordinateRegion region = MKCoordinateRegionMake(coordinateActual, zoom);
     
-    // Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(coordinateActual.latitude, coordinateActual.longitude);
-    marker.title = @"Estou";
-    marker.snippet = @"Aqui";
-    marker.map = mapView_;
+    // Method which sets exibition method
+    [self.appleMap setRegion:region animated:YES];
+    
+    //Map's type
+    self.appleMap.mapType = MKMapTypeStandard;
+    
+    
+//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinateActual.latitude
+//                                                            longitude:coordinateActual.longitude
+//                                                                 zoom:15];
+//    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
+//    mapView_.myLocationEnabled = YES;
+//    self.view = mapView_;
+//    
+//    // Creates a marker in the center of the map.
+//    GMSMarker *marker = [[GMSMarker alloc] init];
+//    marker.position = CLLocationCoordinate2DMake(coordinateActual.latitude, coordinateActual.longitude);
+//    marker.title = @"Estou";
+//    marker.snippet = @"Aqui";
+//    marker.map = mapView_;
     
 
 }
