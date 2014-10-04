@@ -147,11 +147,11 @@
             
             
             // Place a marker on every Point of interest
-            CLLocationCoordinate2D placesPosition = CLLocationCoordinate2DMake(offersPoint.latitude, offersPoint.longitude);
-            GMSMarker *offersMarker = [GMSMarker markerWithPosition:placesPosition];
-            offersMarker.position = placesPosition;
-            offersMarker.title = offersLocation[@"coordenadas"];
-            offersMarker.map = mapView_;
+//            CLLocationCoordinate2D placesPosition = CLLocationCoordinate2DMake(offersPoint.latitude, offersPoint.longitude);
+//            GMSMarker *offersMarker = [GMSMarker markerWithPosition:placesPosition];
+//            offersMarker.position = placesPosition;
+//            offersMarker.title = offersLocation[@"coordenadas"];
+//            offersMarker.map = mapView_;
             
             
         }
@@ -165,7 +165,7 @@
     
     
     
-    mapView_.padding = UIEdgeInsetsMake(self.topLayoutGuide.length + 5, 0, self.bottomLayoutGuide.length + 5, 0);
+//    mapView_.padding = UIEdgeInsetsMake(self.topLayoutGuide.length + 5, 0, self.bottomLayoutGuide.length + 5, 0);
 }
 
 
