@@ -45,111 +45,101 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    
-    // Do any additional setup after loading the view.
+
     
     if (nil == self.locationManager){
         self.locationManager = [[CLLocationManager alloc] init];
         
         self.locationManager.delegate = self;
+        //Configure Accuracy depending on your needs, default is kCLLocationAccuracyBest
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
         
-        self.locationManager.distanceFilter = 500;
-        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
-        
-        
+        // Set a movement threshold for new events.
+        self.locationManager.distanceFilter = 500; // meters
         
         [self.locationManager startUpdatingLocation];
+        [self.locationManager requestWhenInUseAuthorization];
+        [self.locationManager requestAlwaysAuthorization];
     }
-    
-//    mapView_.delegate = self;
     
     
     CLLocation *location = [self.locationManager location];
-    CLLocationCoordinate2D coordinate = [location coordinate];
-    
-    
-//    CLLocation *newLocation = mapView_.myLocation;
-//    CLLocationCoordinate2D target =
-//    CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-    mapView_.camera = [GMSCameraPosition cameraWithTarget:coordinate zoom:15];
-    
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinate.latitude
-                                                            longitude:coordinate.longitude
+    CLLocationCoordinate2D coordinateActual = [location coordinate];
+    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinateActual.latitude
+                                                            longitude:coordinateActual.longitude
                                                                  zoom:15];
-    
-    
-    
-    
-    mapView_ = [GMSMapView mapWithFrame:self.view.bounds camera:camera];
-    
-    [self.view addSubview:mapView_];
-    
-    mapView_.mapType = kGMSTypeNormal;
-    mapView_.settings.myLocationButton = YES;
-    mapView_.indoorEnabled = YES;
-    
+    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
     mapView_.myLocationEnabled = YES;
+    self.view = mapView_;
     
-    
-    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
-        if (!error) {
-            NSLog(@"GeoPoint é %@",geoPoint);
-        }
-    }];
-    
-    PFQuery *query = [PFQuery queryWithClassName:@"Oferta"];
-    
-    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
-        [query whereKey:@"coordenadas" nearGeoPoint:self.detailItem[@"coordenadas"] withinKilometers:5.0];
-        
-        
-    }];
-
-    
-    
-    
-//   MKCoordinateRegion region;
-//   region.center = target;
-//   [mapView_ setCamera:camera];
-    
-//   Creates a marker in the center of the map.
-//   GMSMarker *marker = [[GMSMarker alloc] init];
-//   marker.position = CLLocationCoordinate2DMake(location.coordinate.latitude, location.coordinate.longitude);
-//   marker.title = @"Current";
-//   marker.snippet = @"Location";
-//   marker.map = mapView_;
+    // Creates a marker in the center of the map.
+    GMSMarker *marker = [[GMSMarker alloc] init];
+    marker.position = CLLocationCoordinate2DMake(coordinateActual.latitude, coordinateActual.longitude);
+    marker.title = @"Estou";
+    marker.snippet = @"Aqui";
+    marker.map = mapView_;
     
 
 }
 
-//-(PFQuery*)queryOffers{
-//    
-//    return query;
-//}
 
+
+#pragma mark - Location Manager Callbacks
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     
-    if (self.detailItem) {
-        // obtain the geopoint
-        PFGeoPoint *geoPoint = self.detailItem[@"coordenadas"];
+   
+    
+    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         
-        // center our map view around this geopoint
-        GMSMarker *marker = [[GMSMarker alloc]init];
-        marker.position = CLLocationCoordinate2DMake(geoPoint.longitude, geoPoint.longitude);
-       
-        
-        // add the annotation
-        marker.title = self.detailItem[@"nomeEmpresa"];
-        marker.snippet = self.detailItem[@"cartaoOferta"];
-        marker.map = mapView_;
-    }
-
+        if (!error) {
+            
+            
+            // Check current Location
+            NSLog(@"Current Location: %@", [locations lastObject]);
+            
+            // Define Offer's objects and its points
+            PFObject *offersLocation = [PFObject objectWithClassName:@"Places"];
+            //PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
+            
+            PFGeoPoint *offersPoint = [offersLocation objectForKey:@"places_coordinate"];
+            
+            // Create a query for Places of interest near current location
+            PFQuery *query = [PFQuery queryWithClassName:@"Places"];
+            
+            [query whereKey:@"places_coordinate" nearGeoPoint:geoPoint withinKilometers:20.0];
+         
+            
+            // Limit the query
+            //query.limit = 10;
+            
+            // Store query in an Array
+            NSArray *offersList = [offersLocation objectForKey:@"places_coordinate"];
+            
+            
+            // Find objects from the Array
+            offersList = [query findObjects];
+            
+            NSLog(@"Oferta: %@",offersList);
+            
+            // Create a GeoPoint for markers
+            offersPoint = offersLocation[@"places_coordinate"];
+            
+            NSLog(@"Point: %@",offersPoint);
+            
+            
+            // Place a marker on every Point of interest
+            CLLocationCoordinate2D placesPosition = CLLocationCoordinate2DMake(offersPoint.latitude, offersPoint.longitude);
+            GMSMarker *offersMarker = [GMSMarker markerWithPosition:placesPosition];
+            offersMarker.position = placesPosition;
+            offersMarker.title = offersLocation[@"places_coordinate"];
+            offersMarker.map = mapView_;
+            
+            
+        }
+    }];
     
     
-    
-
 }
 
 -(void)viewWillLayoutSubviews{
@@ -161,8 +151,6 @@
 }
 
 
-
-#pragma mark - PFQuery
 
 
 
