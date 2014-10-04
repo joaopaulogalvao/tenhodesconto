@@ -99,22 +99,22 @@
             NSLog(@"Current Location: %@", [locations lastObject]);
             
             // Define Offer's objects and its points
-            PFObject *offersLocation = [PFObject objectWithClassName:@"Places"];
+            PFObject *offersLocation = [PFObject objectWithClassName:@"Ofertas"];
             //PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
             
-            PFGeoPoint *offersPoint = [offersLocation objectForKey:@"places_coordinate"];
+            PFGeoPoint *offersPoint = [offersLocation objectForKey:@"coordenadas"];
             
             // Create a query for Places of interest near current location
-            PFQuery *query = [PFQuery queryWithClassName:@"Places"];
+            PFQuery *query = [PFQuery queryWithClassName:@"Ofertas"];
             
-            [query whereKey:@"places_coordinate" nearGeoPoint:geoPoint withinKilometers:20.0];
+            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint withinKilometers:20.0];
          
             
             // Limit the query
             //query.limit = 10;
             
             // Store query in an Array
-            NSArray *offersList = [offersLocation objectForKey:@"places_coordinate"];
+            NSArray *offersList = [offersLocation objectForKey:@"coordenadas"];
             
             
             // Find objects from the Array
@@ -123,7 +123,7 @@
             NSLog(@"Oferta: %@",offersList);
             
             // Create a GeoPoint for markers
-            offersPoint = offersLocation[@"places_coordinate"];
+            offersPoint = offersLocation[@"coordenadas"];
             
             NSLog(@"Point: %@",offersPoint);
             
@@ -132,7 +132,7 @@
             CLLocationCoordinate2D placesPosition = CLLocationCoordinate2DMake(offersPoint.latitude, offersPoint.longitude);
             GMSMarker *offersMarker = [GMSMarker markerWithPosition:placesPosition];
             offersMarker.position = placesPosition;
-            offersMarker.title = offersLocation[@"places_coordinate"];
+            offersMarker.title = offersLocation[@"coordenadas"];
             offersMarker.map = mapView_;
             
             
