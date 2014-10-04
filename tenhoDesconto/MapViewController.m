@@ -11,6 +11,7 @@
 #import "AppDelegate.h"
 #import <CoreLocation/CoreLocation.h>
 #import "CadastroViewController.h"
+#import <MapKit/MapKit.h>
 
 
 
@@ -63,8 +64,12 @@
     }
     
     
+    self.appleMap.showsUserLocation = YES;
+    
     CLLocation *location = [self.locationManager location];
     CLLocationCoordinate2D coordinateActual = [location coordinate];
+    
+    
     GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinateActual.latitude
                                                             longitude:coordinateActual.longitude
                                                                  zoom:15];
