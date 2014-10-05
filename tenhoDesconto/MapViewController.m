@@ -63,6 +63,8 @@
         [self.locationManager requestAlwaysAuthorization];
     }
     
+    self.appleMap.delegate = self;
+    
     // Map will show current location
     self.appleMap.showsUserLocation = YES;
     
@@ -123,7 +125,7 @@
             //PFGeoPoint *offersPoint = [offersLocation objectForKey:@"coordenadas"];
             
             // Create a query for Places of interest near current location
-            PFQuery *query = [PFQuery queryWithClassName:@"Ofertas"];
+            PFQuery *query = [PFQuery queryWithClassName:@"Oferta"];
             
             [query whereKey:@"coordenadas" nearGeoPoint:[PFGeoPoint geoPointWithLatitude:self.location.coordinate.latitude  longitude:self.location.coordinate.longitude] withinKilometers:1.0];
          
@@ -132,13 +134,15 @@
             //query.limit = 10;
             
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                PFObject *offersLocation = [PFObject objectWithClassName:@"Ofertas"];
+                PFObject *offersLocation = [PFObject objectWithClassName:@"Oferta"];
                 
                 if (!error) {
                     for (offersLocation in objects) {
                         MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
                                                                   init];
                         [self.appleMap addAnnotation:geoPointAnnotation];
+                        
+                        
                     }
                 }
             }];
@@ -172,6 +176,20 @@
     }];
     
     
+}
+
+#pragma mark - MKMapViewDelegate
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    
+    MKPinAnnotationView *pinOffers = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    
+    pinOffers.pinColor = MKPinAnnotationColorRed;
+    
+    pinOffers.canShowCallout = YES;
+    
+    pinOffers.animatesDrop = YES;
+    
+    return pinOffers;
 }
 
 -(void)viewWillLayoutSubviews{
