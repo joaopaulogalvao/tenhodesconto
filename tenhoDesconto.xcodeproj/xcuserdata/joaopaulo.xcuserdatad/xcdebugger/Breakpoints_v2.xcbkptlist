@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "Yes"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "434160729.25104"
+            timestampString = "434162441.565497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "199"
-            endingLineNumber = "199"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "-viewWillLayoutSubviews"
             landmarkType = "5">
             <Actions>
@@ -35,11 +35,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "434160729.25104"
+            timestampString = "434162441.565497"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "192"
+            endingLineNumber = "192"
             landmarkName = "@implementation MapViewController"
             landmarkType = "3">
          </BreakpointContent>

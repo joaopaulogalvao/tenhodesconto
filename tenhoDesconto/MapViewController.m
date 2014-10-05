@@ -85,21 +85,6 @@
     self.appleMap.mapType = MKMapTypeStandard;
     
     
-//    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinateActual.latitude
-//                                                            longitude:coordinateActual.longitude
-//                                                                 zoom:15];
-//    mapView_ = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-//    mapView_.myLocationEnabled = YES;
-//    self.view = mapView_;
-//    
-//    // Creates a marker in the center of the map.
-//    GMSMarker *marker = [[GMSMarker alloc] init];
-//    marker.position = CLLocationCoordinate2DMake(coordinateActual.latitude, coordinateActual.longitude);
-//    marker.title = @"Estou";
-//    marker.snippet = @"Aqui";
-//    marker.map = mapView_;
-    
-
 }
 
 
@@ -119,7 +104,7 @@
             NSLog(@"Current Location: %@", [locations lastObject]);
             
             // Define Offer's objects and its points
-            //PFObject *offersLocation = [PFObject objectWithClassName:@"Ofertas"];
+            //PFObject *offersLocation = [PFObject objectWithClassName:@"Oferta"];
             //PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
             
             //PFGeoPoint *offersPoint = [offersLocation objectForKey:@"coordenadas"];
@@ -127,8 +112,9 @@
             // Create a query for Places of interest near current location
             PFQuery *query = [PFQuery queryWithClassName:@"Oferta"];
             
-            [query whereKey:@"coordenadas" nearGeoPoint:[PFGeoPoint geoPointWithLatitude:self.location.coordinate.latitude  longitude:self.location.coordinate.longitude] withinKilometers:1.0];
+            //[query whereKey:@"coordenadas" nearGeoPoint:[PFGeoPoint geoPointWithLatitude:self.location.coordinate.latitude  longitude:self.location.coordinate.longitude] withinKilometers:1.0];
          
+            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint withinKilometers:1.0];
             
             // Limit the query
             //query.limit = 10;
