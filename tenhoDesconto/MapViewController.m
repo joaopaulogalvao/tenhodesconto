@@ -114,7 +114,7 @@
             
             //[query whereKey:@"coordenadas" nearGeoPoint:[PFGeoPoint geoPointWithLatitude:self.location.coordinate.latitude  longitude:self.location.coordinate.longitude] withinKilometers:1.0];
          
-            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint withinKilometers:1.0];
+            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint];
             
             // Limit the query
             //query.limit = 10;
@@ -163,6 +163,8 @@
     
     
 }
+
+
 
 #pragma mark - MKMapViewDelegate
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
