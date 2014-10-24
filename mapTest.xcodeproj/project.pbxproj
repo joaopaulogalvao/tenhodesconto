@@ -40,6 +40,7 @@
 		BD74FAA419D44E260030E78A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD74FAA319D44E260030E78A /* OpenGLES.framework */; };
 		BD74FAA619D451AE0030E78A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD74FAA519D451AE0030E78A /* Social.framework */; };
 		BD74FAA819D452060030E78A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD74FAA719D452060030E78A /* Accounts.framework */; };
+		BD8D3CCE19FA5FE100BEF67A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D3CCD19FA5FE100BEF67A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		BD74FAA319D44E260030E78A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BD74FAA519D451AE0030E78A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BD74FAA719D452060030E78A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BD8D3CCD19FA5FE100BEF67A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD8D3CCE19FA5FE100BEF67A /* MapKit.framework in Frameworks */,
 				BD74FAA819D452060030E78A /* Accounts.framework in Frameworks */,
 				BD74FAA619D451AE0030E78A /* Social.framework in Frameworks */,
 				BD74FA8E19D441B70030E78A /* SystemConfiguration.framework in Frameworks */,
@@ -200,6 +203,7 @@
 		BD74FA7419D43D940030E78A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BD8D3CCD19FA5FE100BEF67A /* MapKit.framework */,
 				BD74FAA719D452060030E78A /* Accounts.framework */,
 				BD74FAA519D451AE0030E78A /* Social.framework */,
 				BD74FAA319D44E260030E78A /* OpenGLES.framework */,
