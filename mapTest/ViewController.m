@@ -89,52 +89,34 @@
             // Limit the query
             query.limit = 10;
             
-            // Store query in an Array
-            NSArray *offersList = [offersLocation objectForKey:@"places_coordinate"];
-            
-            
-            // Find objects from the Array
-            offersList = [query findObjects];
-            
-            NSLog(@"Oferta: %@",offersList);
-            
-            // Create a GeoPoint for markers
-            offersPoint = offersLocation[@"places_coordinate"];
-            
-            NSLog(@"Marker: %@",offersPoint);
-       
-            // Place a marker on every Point of interest
-            GMSMarker *markerPlaces = [[GMSMarker alloc] init];
-            markerPlaces.position = CLLocationCoordinate2DMake(offersPoint.latitude, offersPoint.longitude);
-            markerPlaces.title = @"Estou";
-            markerPlaces.snippet = @"Aqui";
-            markerPlaces.map = self.mapView;
-            
-            //Changing pin pictures for creating a conflict to creating
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 
-//                [self.locationManager startUpdatingLocation];
-//                [self.locationManager requestWhenInUseAuthorization];
-//                [self.locationManager requestAlwaysAuthorization];
-
-//            [self.locationManager startUpdatingLocation];
-
-//                 NSLog(@"Coordinates %@",query);
-
-            //Test for stashing
-
-//                 NSLog(@"Coordinates %@",query);
-
+                // Create Object
+                PFObject *offersLocation = [PFObject objectWithClassName:@"Oferta"];
+                
+                //Create a point for markers
+                PFGeoPoint *offersPoint = [offersLocation objectForKey:@"coordenadas"];
+                
+                NSLog(@"Marker: %@",offersPoint);
+                
+                NSMutableArray *offersArray = [NSMutableArray array];
+                
+                NSLog(@"Oferta: %@",offersArray);
+                
+                [offersArray addObject:offersPoint];
+                
+                if (!error) {
+                    for (offersPoint in offersArray) {
+                        MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
+                                                                 init];
+                        [self.appleMap addAnnotation:geoPointAnnotation];
+                    }
+                }
+                                
+            }];
             
         }
     }];
-    
-    
-    
-
-//"Change Pin icon method"
-//Test for resolving merge conflicts
-//Another test merge conflicts
-
     
     
 }
