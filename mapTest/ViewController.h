@@ -7,14 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
-#import <GoogleMaps/GoogleMaps.h>
 #import <MapKit/MapKit.h>
 #import <CoreLocation/CoreLocation.h>
 #import <Parse/Parse.h>
 
 @interface ViewController : UIViewController<CLLocationManagerDelegate, MKMapViewDelegate>
 
-@property (nonatomic, strong) GMSMapView *mapView;
+
 @property (nonatomic, retain) CLLocationManager *locationManager;
 @property(nonatomic, strong) MKPinAnnotationView *geoPointAnnotation;
 @property(nonatomic, strong)CLLocation *location;
