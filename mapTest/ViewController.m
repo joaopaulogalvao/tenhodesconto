@@ -77,13 +77,19 @@
         
         if (!error) {
             
+            // Create Object
+            PFObject *offersLocation = [PFObject objectWithClassName:@"Places"];
+            
+            //Create a point for markers
+            PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
+            
             // Check current Location
-             NSLog(@"%@", [locations lastObject]);
+             NSLog(@"%@", offersPoint);
             
             // Create a query for Places of interest near current location
             PFQuery *query = [PFQuery queryWithClassName:@"Places"];
         
-            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint];
+            [query whereKey:@"places_coordinate" nearGeoPoint:geoPoint withinKilometers:5.0];
             
             NSLog(@"Query: %@",query);
             
@@ -91,11 +97,8 @@
             query.limit = 10;
             
             
-            NSMutableArray *offersArray = [NSMutableArray array];
-            
-            [offersArray addObject:query];
-            
-            
+            NSArray *offersArray = [query findObjects];
+        
             
             NSLog(@"Array: %@",offersArray);
             
@@ -112,34 +115,6 @@
                 
                 }
             }
-            
-            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                
-                // Create Object
-                PFObject *offersLocation = [PFObject objectWithClassName:@"Oferta"];
-                
-                //Create a point for markers
-                PFGeoPoint *offersPoint = [offersLocation objectForKey:@"coordenadas"];
-                
-                offersPoint = offersLocation[@"coordenadas"];
-                
-                NSLog(@"Marker: %@",offersPoint);
-                
-                NSMutableArray *offersArray = [NSMutableArray array];
-                
-                [offersArray addObject:geoPoint];
-                
-                NSLog(@"Oferta: %@",offersArray);
-                
-                if (!error) {
-                    for (offersPoint in offersArray) {
-                        MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
-                                                                 init];
-                        [self.appleMap addAnnotation:geoPointAnnotation];
-                    }
-                }
-                
-            }];
             
         }
     }];
