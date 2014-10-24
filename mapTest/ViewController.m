@@ -85,6 +85,7 @@
         
             [query whereKey:@"coordenadas" nearGeoPoint:geoPoint];
             
+            NSLog(@"Query: %@",query);
             
             // Limit the query
             query.limit = 10;
@@ -97,13 +98,15 @@
                 //Create a point for markers
                 PFGeoPoint *offersPoint = [offersLocation objectForKey:@"coordenadas"];
                 
+                offersPoint = offersLocation[@"coordenadas"];
+                
                 NSLog(@"Marker: %@",offersPoint);
                 
                 NSMutableArray *offersArray = [NSMutableArray array];
                 
-                NSLog(@"Oferta: %@",offersArray);
+                [offersArray addObject:geoPoint];
                 
-                [offersArray addObject:offersPoint];
+                NSLog(@"Oferta: %@",offersArray);
                 
                 if (!error) {
                     for (offersPoint in offersArray) {
@@ -112,7 +115,7 @@
                         [self.appleMap addAnnotation:geoPointAnnotation];
                     }
                 }
-                                
+                
             }];
             
         }
