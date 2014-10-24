@@ -18,6 +18,7 @@
 @property(nonatomic, strong) MKPinAnnotationView *geoPointAnnotation;
 @property(nonatomic, strong)CLLocation *location;
 @property (nonatomic, strong) PFObject *detailItem;
+@property (weak, nonatomic) IBOutlet MKMapView *appleMap;
 
 
 @end

@@ -45,6 +45,7 @@
     }
     
     
+    
     CLLocation *location = [self.locationManager location];
     CLLocationCoordinate2D coordinateActual = [location coordinate];
 //    NSLog(@"%@",coordinate);
