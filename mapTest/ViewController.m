@@ -107,11 +107,12 @@
             
             if (!error) {
                 for (query in offersArray) {
-                    MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
+                    self.annotation = [[MKPointAnnotation alloc]
                                                              init];
-                    [self.appleMap addAnnotation:geoPointAnnotation];
                     
-                    NSLog(@"Annotation: %@",geoPointAnnotation);
+                    [self.appleMap addAnnotation:self.annotation];
+                    
+                    NSLog(@"Annotation: %@",self.annotation);
                 
                 }
             }
@@ -120,6 +121,23 @@
     }];
     
     
+}
+
+
+#pragma mark - MKMapViewDelegate
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
+    
+    static NSString *MapViewAnnotationIdentifier = @"places_coordinate";
+    
+    MKPinAnnotationView *pinOffers = [[MKPinAnnotationView alloc] initWithAnnotation:self.annotation reuseIdentifier:MapViewAnnotationIdentifier];
+    
+    pinOffers.pinColor = MKPinAnnotationColorRed;
+    
+    pinOffers.canShowCallout = YES;
+    
+    pinOffers.animatesDrop = YES;
+    
+    return pinOffers;
 }
 
 @end
