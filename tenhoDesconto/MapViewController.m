@@ -100,67 +100,47 @@
         if (!error) {
             
             
+            // Create Object
+            PFObject *offersLocation = [PFObject objectWithClassName:@"Places"];
+            
+            //Create a point for markers
+            PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
+            
             // Check current Location
-            NSLog(@"Current Location: %@", [locations lastObject]);
-            
-            // Define Offer's objects and its points
-            //PFObject *offersLocation = [PFObject objectWithClassName:@"Oferta"];
-            //PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
-            
-            //PFGeoPoint *offersPoint = [offersLocation objectForKey:@"coordenadas"];
+            NSLog(@"%@", offersPoint);
             
             // Create a query for Places of interest near current location
-            PFQuery *query = [PFQuery queryWithClassName:@"Oferta"];
+            PFQuery *query = [PFQuery queryWithClassName:@"Places"];
             
-            //[query whereKey:@"coordenadas" nearGeoPoint:[PFGeoPoint geoPointWithLatitude:self.location.coordinate.latitude  longitude:self.location.coordinate.longitude] withinKilometers:1.0];
-         
-            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint];
+            [query whereKey:@"places_coordinate" nearGeoPoint:geoPoint withinKilometers:5.0];
+            
+            NSLog(@"Query: %@",query);
             
             // Limit the query
-            //query.limit = 10;
+            query.limit = 10;
             
-            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-                PFObject *offersLocation = [PFObject objectWithClassName:@"Oferta"];
-                
-                if (!error) {
-                    for (offersLocation in objects) {
-                        MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
-                                                                  init];
-                        [self.appleMap addAnnotation:geoPointAnnotation];
-                        
-                        
-                    }
+            
+            NSArray *offersArray = [query findObjects];
+            
+            
+            NSLog(@"Array: %@",offersArray);
+            
+            
+            
+            
+            if (!error) {
+                for (query in offersArray) {
+                    MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
+                                                             init];
+                    [self.appleMap addAnnotation:geoPointAnnotation];
+                    
+                    NSLog(@"Annotation: %@",geoPointAnnotation);
+                    
                 }
-            }];
-            
-            // Store query in an Array
-            //NSArray *offersList = [offersLocation objectForKey:@"coordenadas"];
-            
-            
-            // Find objects from the Array
-            //offersList = [query findObjects];
-            
-            //NSLog(@"Oferta: %@",offersList);
-            
-            // Create a GeoPoint for markers
-            //offersPoint = offersLocation[@"coordenadas"];
-            
-            //NSLog(@"Point: %@",offersPoint);
-            
-            
-            
-            
-            // Place a marker on every Point of interest
-//            CLLocationCoordinate2D placesPosition = CLLocationCoordinate2DMake(offersPoint.latitude, offersPoint.longitude);
-//            GMSMarker *offersMarker = [GMSMarker markerWithPosition:placesPosition];
-//            offersMarker.position = placesPosition;
-//            offersMarker.title = offersLocation[@"coordenadas"];
-//            offersMarker.map = mapView_;
-            
+            }
             
         }
     }];
-    
     
 }
 
