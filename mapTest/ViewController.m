@@ -90,6 +90,29 @@
             // Limit the query
             query.limit = 10;
             
+            
+            NSMutableArray *offersArray = [NSMutableArray array];
+            
+            [offersArray addObject:query];
+            
+            
+            
+            NSLog(@"Array: %@",offersArray);
+            
+            
+            
+            
+            if (!error) {
+                for (query in offersArray) {
+                    MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
+                                                             init];
+                    [self.appleMap addAnnotation:geoPointAnnotation];
+                    
+                    NSLog(@"Annotation: %@",geoPointAnnotation);
+                
+                }
+            }
+            
             [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
                 
                 // Create Object
