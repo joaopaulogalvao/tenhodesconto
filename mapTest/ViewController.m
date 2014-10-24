@@ -44,36 +44,26 @@
         [self.locationManager requestAlwaysAuthorization];
     }
     
+    self.appleMap.delegate = self;
     
+    // Map will show current location
+    self.appleMap.showsUserLocation = YES;
     
-    CLLocation *location = [self.locationManager location];
-    CLLocationCoordinate2D coordinateActual = [location coordinate];
-//    NSLog(@"%@",coordinate);
+    // Maps' opening spot
+    self.location = [self.locationManager location];
+    CLLocationCoordinate2D coordinateActual = [self.location coordinate];
     
+    // Map's zoom
+    MKCoordinateSpan zoom = MKCoordinateSpanMake(0.010, 0.010);
     
-//    [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
-//        //        NSLog(@"%@",geoPoint);
-//        
-//        NSLog(@"%@",geoPoint);
-//        
-//    }];
+    // Create a region
+    MKCoordinateRegion region = MKCoordinateRegionMake(coordinateActual, zoom);
     
-    // Create a GMSCameraPosition that tells the map to display the
-    // coordinate -33.86,151.20 at zoom level 6.
-    GMSCameraPosition *camera = [GMSCameraPosition cameraWithLatitude:coordinateActual.latitude
-                                                            longitude:coordinateActual.longitude
-                                                                 zoom:15];
+    // Method which sets exibition method
+    [self.appleMap setRegion:region animated:YES];
     
-    self.mapView = [GMSMapView mapWithFrame:CGRectZero camera:camera];
-    self.mapView.myLocationEnabled = YES;
-    self.view = self.mapView;
-    
-    // Creates a marker in the center of the map.
-    GMSMarker *marker = [[GMSMarker alloc] init];
-    marker.position = CLLocationCoordinate2DMake(coordinateActual.latitude, coordinateActual.longitude);
-    marker.title = @"Estou";
-    marker.snippet = @"Aqui";
-    marker.map = self.mapView;
+    //Map's type
+    self.appleMap.mapType = MKMapTypeStandard;
     
     
 }
