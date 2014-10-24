@@ -72,40 +72,18 @@
 
 -(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations{
     
-
-    
-//    PFGeoPoint *point = [PFGeoPoint geoPointWithLocation:[self.locationManager location]];
-//    PFGeoPoint *point = currentLocation[@"lat_long"];
     
     [PFGeoPoint geoPointForCurrentLocationInBackground:^(PFGeoPoint *geoPoint, NSError *error) {
         
         if (!error) {
             
-            
             // Check current Location
              NSLog(@"%@", [locations lastObject]);
-            
-            
-//            // Save Current Location
-//            PFObject *currentLocation = [PFObject objectWithClassName:@"Local"];
-//            PFGeoPoint *point = [PFGeoPoint geoPointWithLocation:[locations lastObject]];
-//            
-//            // Relate a location for a current user?
-////            [currentLocation setObject:[PFUser currentUser] forKey:@"lat_long"];
-//            
-//            currentLocation[@"lat_long"] = point;
-//            
-//            [currentLocation saveInBackground];
-            
-            
-            // Define Offer's objects and its points
-            PFObject *offersLocation = [PFObject objectWithClassName:@"Places"];
-            PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
             
             // Create a query for Places of interest near current location
             PFQuery *query = [PFQuery queryWithClassName:@"Places"];
         
-            [query whereKey:@"places_coordinate" nearGeoPoint:geoPoint];
+            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint];
             
             
             // Limit the query
