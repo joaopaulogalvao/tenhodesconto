@@ -107,8 +107,13 @@
             
             if (!error) {
                 for (query in offersArray) {
+                    
                     self.annotation = [[MKPointAnnotation alloc]
                                                              init];
+                    
+                    CLLocationCoordinate2D coord = {offersPoint.latitude, offersPoint.longitude};
+                    
+                    self.annotation.coordinate = coord ;
                     
                     [self.appleMap addAnnotation:self.annotation];
                     
