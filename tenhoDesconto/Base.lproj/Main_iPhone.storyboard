@@ -57,6 +57,11 @@
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sPE-IM-wk4">
                                 <rect key="frame" x="0.0" y="64" width="320" height="456"/>
+                                <subviews>
+                                    <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="STT-KI-J8H">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
+                                    </mapView>
+                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -64,6 +69,9 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Ofertas Próximas" image="map" id="QQp-pM-T4B"/>
                     <navigationItem key="navigationItem" title="Ofertas Próximas" id="VwR-sk-haV"/>
+                    <connections>
+                        <outlet property="appleMap" destination="STT-KI-J8H" id="C3T-1g-psY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enQ-BC-eY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -19,7 +19,6 @@
 		6C2538CB1900244F009E7386 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2538CA1900244F009E7386 /* OpenGLES.framework */; };
 		6C2663B818F87E910004373D /* Ofertas.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C2663B718F87E910004373D /* Ofertas.m */; };
 		6C2663BA18F881460004373D /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2663B918F881460004373D /* CoreLocation.framework */; };
-		6C2663BE18F8839E0004373D /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2663BD18F8839E0004373D /* Parse.framework */; };
 		6C2663C018F883C20004373D /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2663BF18F883C20004373D /* AudioToolbox.framework */; };
 		6C2663C218F883D10004373D /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2663C118F883D10004373D /* CFNetwork.framework */; };
 		6C2663C418F884040004373D /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2663C318F884040004373D /* libz.dylib */; };
@@ -52,6 +51,8 @@
 		6C702AFE19018F66000FB43A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C702AFD19018F66000FB43A /* MapKit.framework */; };
 		6C79EEDC18F44A3A00C8DA24 /* Cartoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C79EEDB18F44A3A00C8DA24 /* Cartoes.m */; };
 		6C79EEDF18F44A7300C8DA24 /* CartoesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C79EEDE18F44A7300C8DA24 /* CartoesTableViewController.m */; };
+		6CA6030219DF7F3100A09EAC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030119DF7F3100A09EAC /* Parse.framework */; };
+		6CA6030419DF7F4100A09EAC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030319DF7F4100A09EAC /* Bolts.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,7 +83,6 @@
 		6C2663B618F87E910004373D /* Ofertas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ofertas.h; sourceTree = "<group>"; };
 		6C2663B718F87E910004373D /* Ofertas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ofertas.m; sourceTree = "<group>"; };
 		6C2663B918F881460004373D /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
-		6C2663BD18F8839E0004373D /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		6C2663BF18F883C20004373D /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		6C2663C118F883D10004373D /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		6C2663C318F884040004373D /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -126,6 +126,8 @@
 		6C79EEDB18F44A3A00C8DA24 /* Cartoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cartoes.m; sourceTree = "<group>"; };
 		6C79EEDD18F44A7300C8DA24 /* CartoesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoesTableViewController.h; sourceTree = "<group>"; };
 		6C79EEDE18F44A7300C8DA24 /* CartoesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoesTableViewController.m; sourceTree = "<group>"; };
+		6CA6030119DF7F3100A09EAC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
+		6CA6030319DF7F4100A09EAC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -148,9 +150,10 @@
 				6C702AFA19018E2B000FB43A /* libc++.dylib in Frameworks */,
 				6C2538C91900243D009E7386 /* libicucore.dylib in Frameworks */,
 				6C2663C418F884040004373D /* libz.dylib in Frameworks */,
+				6CA6030419DF7F4100A09EAC /* Bolts.framework in Frameworks */,
 				6C2663C618F8840F0004373D /* MobileCoreServices.framework in Frameworks */,
+				6CA6030219DF7F3100A09EAC /* Parse.framework in Frameworks */,
 				6C2538CB1900244F009E7386 /* OpenGLES.framework in Frameworks */,
-				6C2663BE18F8839E0004373D /* Parse.framework in Frameworks */,
 				6C2663C818F8841B0004373D /* QuartzCore.framework in Frameworks */,
 				6C2663CA18F884270004373D /* Security.framework in Frameworks */,
 				6C2663CC18F884310004373D /* StoreKit.framework in Frameworks */,
@@ -194,6 +197,8 @@
 		6C3248BE18EDBF2A00F7FE8C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6CA6030319DF7F4100A09EAC /* Bolts.framework */,
+				6CA6030119DF7F3100A09EAC /* Parse.framework */,
 				6C1EA05B19055E2900A82530 /* GoogleMaps.bundle */,
 				6C702AFD19018F66000FB43A /* MapKit.framework */,
 				6C702AFB19018E5C000FB43A /* libc++abi.dylib */,
@@ -215,7 +220,6 @@
 				6C2663C318F884040004373D /* libz.dylib */,
 				6C2663C118F883D10004373D /* CFNetwork.framework */,
 				6C2663BF18F883C20004373D /* AudioToolbox.framework */,
-				6C2663BD18F8839E0004373D /* Parse.framework */,
 				6C2663B918F881460004373D /* CoreLocation.framework */,
 				6C3248BF18EDBF2A00F7FE8C /* Foundation.framework */,
 				6C3248C118EDBF2A00F7FE8C /* CoreGraphics.framework */,
@@ -567,6 +571,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/GoogleMaps-iOS-1.7.2",
+					"$(PROJECT_DIR)/parse-library-1",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tenhoDesconto/tenhoDesconto-Prefix.pch";
@@ -592,6 +597,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 					"$(PROJECT_DIR)/GoogleMaps-iOS-1.7.2",
+					"$(PROJECT_DIR)/parse-library-1",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "tenhoDesconto/tenhoDesconto-Prefix.pch";

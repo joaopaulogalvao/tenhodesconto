@@ -39,6 +39,8 @@
 {
     [super viewDidLoad];
     
+    // Fazer dois Arrays criando objetos para cada um e armazenando-os - Ver em MapViewController exampelo
+    
     self.tableData = [NSArray arrayWithObjects:@"Visa",@"SulAmerica", nil];
     
     self.thumbnails = [NSArray arrayWithObjects:@"visa",@"sulamerica", nil];
