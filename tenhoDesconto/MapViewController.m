@@ -130,6 +130,7 @@
             
             if (!error) {
                 for (PFObject *offerObject in offersArray) {
+
                     
                     PFGeoPoint *offerPoint = [offerObject objectForKey:@"coordenadas"];
                     

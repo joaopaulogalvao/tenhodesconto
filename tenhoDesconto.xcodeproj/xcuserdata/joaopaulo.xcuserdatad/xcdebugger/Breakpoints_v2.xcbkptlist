@@ -130,7 +130,7 @@
                   symbolName = "-[MapViewController locationManager:didUpdateLocations:]"
                   moduleName = "tenhoDesconto"
                   urlString = "file:///Users/joaopaulo/Documents/Developer/tenhoDesconto/tenhoDesconto/MapViewController.m"
-                  timestampString = "437187036.208315"
+                  timestampString = "437267391.547871"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
@@ -144,7 +144,7 @@
                   symbolName = "__56-[MapViewController locationManager:didUpdateLocations:]_block_invoke"
                   moduleName = "tenhoDesconto"
                   urlString = "file:///Users/joaopaulo/Documents/Developer/tenhoDesconto/tenhoDesconto/MapViewController.m"
-                  timestampString = "437187036.208495"
+                  timestampString = "437267391.548107"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "98"
@@ -214,22 +214,6 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "129"
             endingLineNumber = "129"
-            landmarkName = "-locationManager:didUpdateLocations:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "437260480.421932"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
