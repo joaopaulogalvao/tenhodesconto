@@ -119,7 +119,7 @@
             // Limit the query
             query.limit = 10;
             
-            
+            // Store query in an Array
             NSArray *offersArray = [query findObjects];
             
             
