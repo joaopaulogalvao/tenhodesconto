@@ -129,7 +129,8 @@
             
             
             if (!error) {
-                for (PFGeoPoint *offerPoint in offersArray) {
+                for (PFObject *offerObject in offersArray) {
+                    PFGeoPoint *offerPoint = [offerObject objectForKey:@"places_coordinate"];
                     MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
                                                              init];
                     geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
