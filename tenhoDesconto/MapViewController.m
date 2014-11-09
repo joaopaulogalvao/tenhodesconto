@@ -101,18 +101,18 @@
             
             
             // Create Object
-            PFObject *offersLocation = [PFObject objectWithClassName:@"Places"];
+            PFObject *offersLocation = [PFObject objectWithClassName:@"Oferta"];
             
             //Create a point for markers
-            PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
+            PFGeoPoint *offersPoint = offersLocation[@"coordenadas"];
             
             // Check current Location
             NSLog(@"%@", offersPoint);
             
             // Create a query for Places of interest near current location
-            PFQuery *query = [PFQuery queryWithClassName:@"Places"];
+            PFQuery *query = [PFQuery queryWithClassName:@"Oferta"];
             
-            [query whereKey:@"places_coordinate" nearGeoPoint:geoPoint withinKilometers:5.0];
+            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint withinKilometers:5.0];
             
             NSLog(@"Query: %@",query);
             
@@ -129,9 +129,15 @@
             
             
             if (!error) {
-                for (query in offersArray) {
+                for (PFObject *offerObject in offersArray) {
+                    
+                    PFGeoPoint *offerPoint = [offerObject objectForKey:@"coordenadas"];
+                    
                     MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
                                                              init];
+                    
+                    geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
+                    
                     [self.appleMap addAnnotation:geoPointAnnotation];
                     
                     NSLog(@"Annotation: %@",geoPointAnnotation);
