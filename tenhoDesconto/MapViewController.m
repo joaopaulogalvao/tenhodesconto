@@ -129,9 +129,10 @@
             
             
             if (!error) {
-                for (query in offersArray) {
+                for (PFGeoPoint *offerPoint in offersArray) {
                     MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
                                                              init];
+                    geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
                     [self.appleMap addAnnotation:geoPointAnnotation];
                     
                     NSLog(@"Annotation: %@",geoPointAnnotation);
