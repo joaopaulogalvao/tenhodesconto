@@ -106,14 +106,14 @@
             
             
             if (!error) {
-                for (query in offersArray) {
+                for (PFObject *offerObject in offersArray) {
+                    
+                    PFGeoPoint *offerPoint = [offerObject objectForKey:@"places_coordinate"];
                     
                     self.annotation = [[MKPointAnnotation alloc]
                                                              init];
                     
-                    CLLocationCoordinate2D coord = {offersPoint.latitude, offersPoint.longitude};
-                    
-                    self.annotation.coordinate = coord ;
+                    self.annotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude) ;
                     
                     [self.appleMap addAnnotation:self.annotation];
                     
@@ -136,7 +136,11 @@
     
     MKPinAnnotationView *pinOffers = [[MKPinAnnotationView alloc] initWithAnnotation:self.annotation reuseIdentifier:MapViewAnnotationIdentifier];
     
-    pinOffers.pinColor = MKPinAnnotationColorRed;
+    //pinOffers.pinColor = MKPinAnnotationColorRed;
+    
+    pinOffers.image = [UIImage imageNamed:@"mapMarker64"];
+    
+    // pin offers
     
     pinOffers.canShowCallout = YES;
     
