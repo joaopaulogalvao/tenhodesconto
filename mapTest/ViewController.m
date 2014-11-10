@@ -115,6 +115,8 @@
                     
                     self.annotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude) ;
                     
+                    self.annotation.title = offerObject[@"Name"];
+                    
                     [self.appleMap addAnnotation:self.annotation];
                     
                     NSLog(@"Annotation: %@",self.annotation);
@@ -136,15 +138,31 @@
     
     MKPinAnnotationView *pinOffers = [[MKPinAnnotationView alloc] initWithAnnotation:self.annotation reuseIdentifier:MapViewAnnotationIdentifier];
     
+    //MKPointAnnotation *point =
+    
     //pinOffers.pinColor = MKPinAnnotationColorRed;
     
-    pinOffers.image = [UIImage imageNamed:@"mapMarker64"];
+    pinOffers.image = [UIImage imageNamed:@"mapMarker64.png"];
     
     pinOffers.canShowCallout = YES;
     
     pinOffers.animatesDrop = YES;
     
     return pinOffers;
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
+    
+}
+
+-(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
+    
+    
+    
+}
+
+-(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
+    
 }
 
 @end
