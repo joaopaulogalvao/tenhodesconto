@@ -140,8 +140,6 @@
     
     pinOffers.image = [UIImage imageNamed:@"mapMarker64"];
     
-    // pin offers
-    
     pinOffers.canShowCallout = YES;
     
     pinOffers.animatesDrop = YES;
