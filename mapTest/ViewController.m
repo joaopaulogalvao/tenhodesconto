@@ -146,6 +146,8 @@
     
     pinOffers.canShowCallout = YES;
     
+    pinOffers.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
     pinOffers.animatesDrop = YES;
     
     return pinOffers;
@@ -156,17 +158,18 @@
 }
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    NSLog(@"%@", control);
     
+    UIViewController *offer = [self.storyboard instantiateViewControllerWithIdentifier:@"offers"];
+    
+    [self presentViewController:offer animated:YES completion:nil];
     
 }
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
     
     
-    UIViewController *offer = [self.storyboard instantiateViewControllerWithIdentifier:@"offers"];
     
-    [self presentViewController:offer animated:YES completion:nil];
+    
     
 }
 
