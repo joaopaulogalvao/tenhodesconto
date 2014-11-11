@@ -53,6 +53,7 @@
 		6C79EEDF18F44A7300C8DA24 /* CartoesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C79EEDE18F44A7300C8DA24 /* CartoesTableViewController.m */; };
 		6CA6030219DF7F3100A09EAC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030119DF7F3100A09EAC /* Parse.framework */; };
 		6CA6030419DF7F4100A09EAC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030319DF7F4100A09EAC /* Bolts.framework */; };
+		6CF14D461A12A88200F2A4BD /* OfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF14D451A12A88200F2A4BD /* OfferViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,8 @@
 		6C79EEDE18F44A7300C8DA24 /* CartoesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoesTableViewController.m; sourceTree = "<group>"; };
 		6CA6030119DF7F3100A09EAC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		6CA6030319DF7F4100A09EAC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
+		6CF14D441A12A88200F2A4BD /* OfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferViewController.h; sourceTree = "<group>"; };
+		6CF14D451A12A88200F2A4BD /* OfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +314,8 @@
 				6C1C9A8918FD874C000A80FB /* MyAccountViewController.m */,
 				6C22B13C190716740094F4A1 /* MapViewController.h */,
 				6C22B13D190716740094F4A1 /* MapViewController.m */,
+				6CF14D441A12A88200F2A4BD /* OfferViewController.h */,
+				6CF14D451A12A88200F2A4BD /* OfferViewController.m */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -426,6 +431,7 @@
 				6C3248CC18EDBF2A00F7FE8C /* main.m in Sources */,
 				6C2663B818F87E910004373D /* Ofertas.m in Sources */,
 				6C1C9A8A18FD874C000A80FB /* MyAccountViewController.m in Sources */,
+				6CF14D461A12A88200F2A4BD /* OfferViewController.m in Sources */,
 				6C28B03218F83FB000B3EC49 /* TelaInicialViewController.m in Sources */,
 				6C79EEDC18F44A3A00C8DA24 /* Cartoes.m in Sources */,
 				6C79EEDF18F44A7300C8DA24 /* CartoesTableViewController.m in Sources */,
