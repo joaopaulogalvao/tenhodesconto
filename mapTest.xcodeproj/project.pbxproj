@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD3E88CE1A11164E0034C6D7 /* OfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD3E88CD1A11164E0034C6D7 /* OfferViewController.m */; };
 		BD74FA4E19D43D860030E78A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BD74FA4D19D43D860030E78A /* main.m */; };
 		BD74FA5119D43D860030E78A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BD74FA5019D43D860030E78A /* AppDelegate.m */; };
 		BD74FA5419D43D860030E78A /* mapTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BD74FA5219D43D860030E78A /* mapTest.xcdatamodeld */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD3E88CC1A11164E0034C6D7 /* OfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferViewController.h; sourceTree = "<group>"; };
+		BD3E88CD1A11164E0034C6D7 /* OfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferViewController.m; sourceTree = "<group>"; };
 		BD74FA4819D43D860030E78A /* mapTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mapTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD74FA4C19D43D860030E78A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD74FA4D19D43D860030E78A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -166,6 +169,8 @@
 				BD74FA5519D43D860030E78A /* ViewController.h */,
 				BD74FA5619D43D860030E78A /* ViewController.m */,
 				BD74FA5819D43D860030E78A /* Main.storyboard */,
+				BD3E88CC1A11164E0034C6D7 /* OfferViewController.h */,
+				BD3E88CD1A11164E0034C6D7 /* OfferViewController.m */,
 				BD74FA5B19D43D860030E78A /* Images.xcassets */,
 				BD74FA5D19D43D860030E78A /* LaunchScreen.xib */,
 				BD74FA5219D43D860030E78A /* mapTest.xcdatamodeld */,
@@ -335,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD3E88CE1A11164E0034C6D7 /* OfferViewController.m in Sources */,
 				BD74FA5419D43D860030E78A /* mapTest.xcdatamodeld in Sources */,
 				BD74FA5119D43D860030E78A /* AppDelegate.m in Sources */,
 				BD74FA5719D43D860030E78A /* ViewController.m in Sources */,

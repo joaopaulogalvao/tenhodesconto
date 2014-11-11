@@ -163,6 +163,10 @@
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
     
+    UIViewController *offer = [self.storyboard instantiateViewControllerWithIdentifier:@"offers"];
+    
+    [self presentViewController:offer animated:YES completion:nil];
+    
 }
 
 @end
