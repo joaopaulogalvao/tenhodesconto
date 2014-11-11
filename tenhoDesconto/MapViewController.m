@@ -81,6 +81,8 @@
     // Method which sets exibition method
     [self.appleMap setRegion:region animated:YES];
     
+    self.appleMap.userTrackingMode = MKUserTrackingModeFollow;
+    
     //Map's type
     self.appleMap.mapType = MKMapTypeStandard;
     
@@ -165,6 +167,8 @@
     //pinOffers.pinColor = MKPinAnnotationColorRed;
     
     pinOffers.canShowCallout = YES;
+    
+    pinOffers.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
     
     pinOffers.animatesDrop = YES;
     

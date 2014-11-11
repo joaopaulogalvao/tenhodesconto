@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "437268096.832831"
+            timestampString = "437429959.146911"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "175"
+            endingLineNumber = "175"
             landmarkName = "-mapView:viewForAnnotation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -83,23 +83,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "426377101.071992"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "84"
-            endingLineNumber = "84"
-            landmarkName = "-viewDidLoad"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "426377101.071992"
+            timestampString = "437429686.512838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "86"
@@ -115,11 +99,27 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "426377101.071992"
+            timestampString = "437429686.512838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "97"
-            endingLineNumber = "97"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-viewDidLoad"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "tenhoDesconto/MapViewController.m"
+            timestampString = "437429686.512838"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
             <Locations>
@@ -161,11 +161,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "437186951.891938"
+            timestampString = "437429686.512838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
@@ -177,11 +177,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "437186953.520414"
+            timestampString = "437429686.512838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
@@ -193,11 +193,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "437186972.29171"
+            timestampString = "437429686.512838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "121"
-            endingLineNumber = "121"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
@@ -209,11 +209,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "437186983.608688"
+            timestampString = "437429686.512838"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "129"
-            endingLineNumber = "129"
+            startingLineNumber = "131"
+            endingLineNumber = "131"
             landmarkName = "-locationManager:didUpdateLocations:"
             landmarkType = "5">
          </BreakpointContent>
