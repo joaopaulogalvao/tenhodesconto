@@ -21,6 +21,7 @@
 @property (nonatomic, strong) PFObject *detailItem;
 @property (weak, nonatomic) IBOutlet MKMapView *appleMap;
 
+- (IBAction)centerMap:(id)sender;
 
 @end
 

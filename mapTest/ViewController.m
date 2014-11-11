@@ -62,6 +62,8 @@
     // Method which sets exibition method
     [self.appleMap setRegion:region animated:YES];
     
+    
+    
     //Map's type
     self.appleMap.mapType = MKMapTypeStandard;
     
@@ -150,7 +152,7 @@
     
     pinOffers.animatesDrop = YES;
     
-    return pinOffers;
+    return nil;
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
@@ -160,11 +162,11 @@
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
     
-//    CGPoint annotationCenter=CGPointMake(control.frame.origin.x+(control.frame.size.width/2),control.frame.origin.y+(control.frame.size.height/2));
-//    
-//    CLLocationCoordinate2D newCenter=[mapView convertPoint:annotationCenter toCoordinateFromView:control.superview];
-//    
-//    [mapView setCenterCoordinate:newCenter animated:YES];
+    CGPoint annotationCenter=CGPointMake(control.frame.origin.x+(control.frame.size.width/2),control.frame.origin.y+(control.frame.size.height/2));
+    
+    CLLocationCoordinate2D newCenter=[mapView convertPoint:annotationCenter toCoordinateFromView:control.superview];
+    
+    [mapView setCenterCoordinate:newCenter animated:YES];
     
     UIViewController *offer = [self.storyboard instantiateViewControllerWithIdentifier:@"offers"];
     
@@ -178,6 +180,12 @@
     
 }
 
+- (IBAction)centerMap:(id)sender {
+    
+    
+    [self.appleMap setCenterCoordinate:self.appleMap.userLocation.location.coordinate animated:YES];
+    
+}
 @end
 
 
