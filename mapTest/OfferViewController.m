@@ -24,6 +24,9 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Actions
+
+
 /*
 #pragma mark - Navigation
 
@@ -34,4 +37,8 @@
 }
 */
 
+- (IBAction)closeDetail:(id)sender {
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 @end

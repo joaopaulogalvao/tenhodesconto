@@ -10,4 +10,10 @@
 
 @interface OfferViewController : UIViewController
 
+
+@property (weak, nonatomic) IBOutlet UIButton *closeDetailButton;
+
+- (IBAction)closeDetail:(id)sender;
+
+
 @end
