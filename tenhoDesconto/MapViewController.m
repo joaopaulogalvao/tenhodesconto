@@ -213,30 +213,30 @@
 
 
 
+#pragma mark - Actions
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+- (IBAction)centerMap:(id)sender {
+    
+    if ([sender isTouchInside]) {
+        
+        [sender setImage:[UIImage imageNamed:@"location48_full"] forState:UIControlStateSelected];
+        
+    } else if(![sender isTouchInside]){
+        [sender setImage:[UIImage imageNamed:@"location48"] forState:UIControlStateNormal];
+        [sender setSelected:NO];
+    }
+    
+    [self.appleMap setCenterCoordinate:self.appleMap.userLocation.location.coordinate animated:YES];
+    
+}
 @end
+
+
+
+
+
+
+
+
+

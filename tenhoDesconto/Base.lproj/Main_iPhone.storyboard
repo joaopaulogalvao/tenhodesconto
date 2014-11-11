@@ -61,6 +61,13 @@
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="STT-KI-J8H">
                                         <rect key="frame" x="0.0" y="0.0" width="320" height="456"/>
                                     </mapView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="md6-lI-UYR">
+                                        <rect key="frame" x="277" y="25" width="24" height="24"/>
+                                        <state key="normal" image="location48"/>
+                                        <connections>
+                                            <action selector="centerMap:" destination="m8l-Ei-Bau" eventType="touchUpInside" id="bVh-79-ws6"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                             </view>
@@ -71,6 +78,7 @@
                     <navigationItem key="navigationItem" title="Ofertas Próximas" id="VwR-sk-haV"/>
                     <connections>
                         <outlet property="appleMap" destination="STT-KI-J8H" id="C3T-1g-psY"/>
+                        <outlet property="locationButton" destination="md6-lI-UYR" id="nyh-P7-Hfy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="enQ-BC-eY2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -862,6 +870,7 @@
         <image name="comment_full" width="24" height="22"/>
         <image name="config" width="26" height="26"/>
         <image name="home" width="26" height="26"/>
+        <image name="location48" width="48" height="48"/>
         <image name="login" width="108" height="52"/>
         <image name="map" width="20" height="30"/>
         <image name="signUpButton" width="108" height="52"/>

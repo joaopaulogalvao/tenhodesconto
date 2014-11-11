@@ -19,5 +19,9 @@
 @property(nonatomic, strong)CLLocation *location;
 @property (nonatomic, strong) PFObject *detailItem;
 @property (weak, nonatomic) IBOutlet MKMapView *appleMap;
+@property (weak, nonatomic) IBOutlet UIButton *locationButton;
+- (IBAction)centerMap:(id)sender;
+
+
 
 @end
