@@ -62,7 +62,7 @@
     // Method which sets exibition method
     [self.appleMap setRegion:region animated:YES];
     
-    
+    self.appleMap.userTrackingMode = MKUserTrackingModeFollow;
     
     //Map's type
     self.appleMap.mapType = MKMapTypeStandard;
@@ -152,7 +152,7 @@
     
     pinOffers.animatesDrop = YES;
     
-    return nil;
+    return pinOffers;
 }
 
 -(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation{
