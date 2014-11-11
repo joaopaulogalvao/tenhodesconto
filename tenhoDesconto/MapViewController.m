@@ -139,6 +139,8 @@
                     
                     geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
                     
+                    geoPointAnnotation.title = offerObject[@"nomeEmpresa"];
+                    
                     [self.appleMap addAnnotation:geoPointAnnotation];
                     
                     NSLog(@"Annotation: %@",geoPointAnnotation);
@@ -158,7 +160,9 @@
     
     MKPinAnnotationView *pinOffers = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
     
-    pinOffers.pinColor = MKPinAnnotationColorRed;
+    pinOffers.image = [UIImage imageNamed:@"tenhoDesconto_logo.png"];
+    
+    //pinOffers.pinColor = MKPinAnnotationColorRed;
     
     pinOffers.canShowCallout = YES;
     

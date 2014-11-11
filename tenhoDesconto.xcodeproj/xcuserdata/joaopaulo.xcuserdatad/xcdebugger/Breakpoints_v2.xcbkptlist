@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "tenhoDesconto/MapViewController.m"
-            timestampString = "437260480.421932"
+            timestampString = "437268096.832831"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
-            landmarkName = "-viewWillLayoutSubviews"
+            startingLineNumber = "171"
+            endingLineNumber = "171"
+            landmarkName = "-mapView:viewForAnnotation:"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

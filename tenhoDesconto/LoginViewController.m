@@ -64,8 +64,6 @@
 }
 
 
-
-
 #pragma mark - UITextFieldDelegate
 // Triggered when the user starts typing on a textField
 -(void)textFieldDidBeginEditing:(UITextField *)textField {

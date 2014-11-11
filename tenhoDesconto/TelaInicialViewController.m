@@ -7,6 +7,7 @@
 //
 
 #import "TelaInicialViewController.h"
+#import "MapViewController.h"
 
 @interface TelaInicialViewController ()
 
@@ -24,12 +25,37 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
+    
+ 
+    
     self.navigationController.navigationBarHidden = YES;
+    
+    
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
+    PFUser *currentUser = [PFUser currentUser];
+    if (currentUser) {
+        // do stuff with the user
+        
+        UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main_iPhone" bundle:nil];
+        //HomeViewController *home = [storyboard instantiateViewControllerWithIdentifier:@"HomeTab"];
+        MapViewController *closeOffers = [storyboard instantiateViewControllerWithIdentifier:@"HomeTab"];
+        
+        
+        [self  presentViewController:closeOffers animated:YES completion:nil];
+        
+    } else {
+        // show the signup or login screen
+    }
+
+    
+    
+    
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = YES;
 }
