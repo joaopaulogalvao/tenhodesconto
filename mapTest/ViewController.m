@@ -156,12 +156,13 @@
 }
 
 -(void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control{
-    
+    NSLog(@"%@", control);
     
     
 }
 
 -(void)mapView:(MKMapView *)mapView didDeselectAnnotationView:(MKAnnotationView *)view{
+    
     
     UIViewController *offer = [self.storyboard instantiateViewControllerWithIdentifier:@"offers"];
     
