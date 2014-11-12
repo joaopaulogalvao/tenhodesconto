@@ -14,15 +14,39 @@
 
 @implementation DealsListViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.
+}
+
+-(id)initWithCoder:(NSCoder *)aDecoder{
+    
+    self = [super initWithCoder:aDecoder];
+    
+    if (self) {
+        
+        // The className to query on
+        self.parseClassName = @"Categories";
+        
+        // The key of the PFObject to display in the label of the default cell style
+        self.textKey = @"name";
+        
+        // Whether the built-in pull-to-refresh is enabled
+        self.pullToRefreshEnabled = YES;
+        
+        // Whether the built-in pagination is enabled
+        self.paginationEnabled = YES;
+    }
+    return self;
+}
+
 
 /*
 #pragma mark - Navigation
@@ -33,5 +57,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - PFQueryTableView
+
+
 
 @end
