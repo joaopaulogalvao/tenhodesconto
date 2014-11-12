@@ -1,30 +1,29 @@
 //
-//  DealsListViewController.m
+//  CategoryViewController.m
 //  mapTest
 //
 //  Created by Joao Alves on 11/12/14.
 //  Copyright (c) 2014 joaopaulo. All rights reserved.
 //
 
-#import "DealsListViewController.h"
+#import "CategoryViewController.h"
 
-@interface DealsListViewController ()
+@interface CategoryViewController ()
 
 @end
 
-@implementation DealsListViewController
-
+@implementation CategoryViewController
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
     
@@ -33,10 +32,10 @@
     if (self) {
         
         // The className to query on
-        self.parseClassName = @"Deals";
+        self.parseClassName = @"Categories";
         
         // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"name";
+        //self.textKey = @"name";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
@@ -45,6 +44,27 @@
         self.paginationEnabled = YES;
     }
     return self;
+}
+
+
+- (PFQuery *)queryForTable
+{
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+    return query;
+}
+
+-(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
+    
+    static NSString *simpleTableIdentifier = @"CategoriesCell";
+    
+    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    return cell;
+    
 }
 
 
@@ -57,9 +77,5 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-#pragma mark - PFQueryTableView
-
-
 
 @end
