@@ -23,6 +23,13 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = NO;
+    
+    UIBarButtonItem *btn =
+    [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
+                                     style:UIBarButtonItemStylePlain
+                                    target:nil
+                                    action:nil];
+    [[self navigationItem] setBackBarButtonItem:btn];
 }
 
 
@@ -75,11 +82,11 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    PFObject *touchedCell = [self.objects objectAtIndex:indexPath.row];
+    self.touchedCell = [self.objects objectAtIndex:indexPath.row];
     
-    [touchedCell setObjectId:touchedCell[@"Name"]];
+    [self.touchedCell setObjectId:self.touchedCell[@"Name"]];
     
-    NSLog(@"%@",touchedCell);
+    NSLog(@"%@",self.touchedCell);
     
     
 }

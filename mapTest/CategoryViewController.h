@@ -10,4 +10,6 @@
 
 @interface CategoryViewController : PFQueryTableViewController
 
+@property(nonatomic, strong) PFObject *touchedCell;
+
 @end

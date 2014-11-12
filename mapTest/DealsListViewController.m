@@ -7,6 +7,7 @@
 //
 
 #import "DealsListViewController.h"
+#import "CategoryViewController.h"
 
 @interface DealsListViewController ()
 
@@ -33,10 +34,10 @@
     if (self) {
         
         // The className to query on
-        self.parseClassName = @"Deals";
+        self.parseClassName = @"Categories";
         
         // The key of the PFObject to display in the label of the default cell style
-        self.textKey = @"name";
+        //self.textKey = @"Name";
         
         // Whether the built-in pull-to-refresh is enabled
         self.pullToRefreshEnabled = YES;
@@ -60,6 +61,35 @@
 
 #pragma mark - PFQueryTableView
 
+- (PFQuery *)queryForTable
+{
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+    return query;
+}
+
+-(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
+    
+    static NSString *simpleTableIdentifier = @"DealsCell";
+    
+    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    CategoryViewController *categorySelected = [[CategoryViewController alloc]init];
+    
+    //PFObject *categoriesObject = [PFObject objectWithClassName:@"Categories"];
+    
+    PFRelation *relationCatSelected = [[PFRelation alloc]init];
+    
+    [relationCatSelected addObject:categorySelected.touchedCell];
+    
+    cell.textLabel.text = categorySelected.touchedCell[@"Name"];
+    
+    return cell;
+    
+}
 
 
 @end
