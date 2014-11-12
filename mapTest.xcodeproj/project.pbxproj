@@ -170,6 +170,7 @@
 		BD74FA4A19D43D860030E78A /* mapTest */ = {
 			isa = PBXGroup;
 			children = (
+				BDEFD23B1A13859D00FB2927 /* CustomCells */,
 				BD74FA4F19D43D860030E78A /* AppDelegate.h */,
 				BD74FA5019D43D860030E78A /* AppDelegate.m */,
 				BD74FA5519D43D860030E78A /* ViewController.h */,
@@ -247,6 +248,13 @@
 			);
 			name = Frameworks;
 			path = mapTest;
+			sourceTree = "<group>";
+		};
+		BDEFD23B1A13859D00FB2927 /* CustomCells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = CustomCells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
