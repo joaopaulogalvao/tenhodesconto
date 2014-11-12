@@ -60,7 +60,7 @@
         <!--Table-->
         <scene sceneID="xhk-hE-Cmj">
             <objects>
-                <viewController title="Table" id="Jmo-Gh-6Wp" sceneMemberID="viewController">
+                <viewController title="Table" id="Jmo-Gh-6Wp" customClass="DealsListViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R5R-61-6fM">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
