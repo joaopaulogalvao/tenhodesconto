@@ -48,7 +48,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="ZjS-Aq-qT2"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" id="ZjS-Aq-qT2"/>
                     <connections>
                         <outlet property="appleMap" destination="7MK-aU-HnQ" id="wGy-tJ-bZV"/>
                     </connections>
@@ -89,7 +89,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Table" id="7cX-g7-Ar9"/>
+                    <tabBarItem key="tabBarItem" title="Offers" image="offer" id="7cX-g7-Ar9"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPr-9s-qOy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -127,6 +127,10 @@
             <point key="canvasLocation" x="-6" y="-176"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="map" width="32" height="32"/>
+        <image name="offer" width="32" height="32"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
