@@ -86,6 +86,17 @@
     
     [self.touchedCell setObjectId:self.touchedCell[@"Name"]];
     
+    self.relation = [self.touchedCell relationForKey:@"Name"];
+    
+    [self.relation addObject:self.touchedCell];
+    
+    
+    
+//    [self.touchedCell fetchIfNeededInBackgroundWithBlock:^(PFObject *post, NSError *error) {
+//        NSString *title = self.touchedCell[@"Name"];
+//        // do something with your title variable
+//    }];
+    
     NSLog(@"%@",self.touchedCell);
     
     

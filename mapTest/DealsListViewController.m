@@ -34,7 +34,7 @@
     if (self) {
         
         // The className to query on
-        self.parseClassName = @"Categories";
+        self.parseClassName = @"Places";
         
         // The key of the PFObject to display in the label of the default cell style
         //self.textKey = @"Name";
@@ -65,7 +65,18 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
-    return query;
+    CategoryViewController *categorySelected = [[CategoryViewController alloc]init];
+//    
+//    [[categorySelected.relation query] findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        
+//        if (error) {
+//            //
+//        } else {
+            NSLog(@"%@",query);
+//        }
+//    }];
+    
+    return [categorySelected.relation query];
 }
 
 -(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
@@ -81,11 +92,13 @@
     
     //PFObject *categoriesObject = [PFObject objectWithClassName:@"Categories"];
     
-    PFRelation *relationCatSelected = [[PFRelation alloc]init];
+    //PFRelation *relationCatSelected = [[PFRelation alloc]init];
     
-    [relationCatSelected addObject:categorySelected.touchedCell];
+    //[relationCatSelected addObject:categorySelected.touchedCell];
     
     cell.textLabel.text = categorySelected.touchedCell[@"Name"];
+    
+    //cell.textLabel.text = [object objectForKey:@"Name"];
     
     return cell;
     
