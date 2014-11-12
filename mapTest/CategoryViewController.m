@@ -47,6 +47,7 @@
     return self;
 }
 
+#pragma mark - PFQueryTableViewController delegates
 
 - (PFQuery *)queryForTable
 {
@@ -69,6 +70,17 @@
     cell.textLabel.text = [object objectForKey:@"Categories"];
     
     return cell;
+    
+}
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    PFObject *touchedCell = [self.objects objectAtIndex:indexPath.row];
+    
+    [touchedCell setObjectId:touchedCell[@"Name"]];
+    
+    NSLog(@"%@",touchedCell);
+    
     
 }
 
