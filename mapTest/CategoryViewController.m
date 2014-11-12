@@ -22,6 +22,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.navigationController.navigationBarHidden = NO;
 }
 
 
@@ -62,6 +63,10 @@
     if (cell == nil) {
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
+    
+    //PFObject *categoriesObject = [PFObject objectWithClassName:@"Categories"];
+    
+    cell.textLabel.text = [object objectForKey:@"Categories"];
     
     return cell;
     
