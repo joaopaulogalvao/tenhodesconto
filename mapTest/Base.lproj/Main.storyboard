@@ -16,7 +16,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Sbd-et-AvG"/>
-                        <segue destination="DBt-we-Pz9" kind="relationship" relationship="viewControllers" id="5Kv-UN-nNX"/>
+                        <segue destination="E2C-R6-2DB" kind="relationship" relationship="viewControllers" id="TlY-qM-sHN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cn-Ma-tvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -82,7 +82,24 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1se-BE-2KE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-47" y="470"/>
+            <point key="canvasLocation" x="331" y="492"/>
+        </scene>
+        <!--Offers-->
+        <scene sceneID="1fu-qp-B1W">
+            <objects>
+                <navigationController id="E2C-R6-2DB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Offers" image="offer" id="lZS-2t-I3c"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="JSJ-fz-mx0">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="DBt-we-Pz9" kind="relationship" relationship="rootViewController" id="sNX-Pb-Gfp"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="luR-Mj-RPr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-547" y="504"/>
         </scene>
         <!--Offers-->
         <scene sceneID="xet-TX-qXC">
@@ -92,13 +109,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <navigationBar key="tableHeaderView" contentMode="scaleToFill" id="OEV-tM-oxa">
-                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            <items>
-                                <navigationItem title="Categories" id="8gA-mv-Xf8"/>
-                            </items>
-                        </navigationBar>
                         <prototypes>
                             <tableViewCell multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="CategoriesCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CategoriesCell" id="h7w-vg-cMd" customClass="PFTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
@@ -106,7 +116,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5IM-bS-hbB" kind="modal" id="fzD-Ff-w1G"/>
+                                    <segue destination="5IM-bS-hbB" kind="push" id="fzD-Ff-w1G"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -116,11 +126,12 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Offers" image="offer" id="MJ8-Ae-lfN"/>
+                    <navigationItem key="navigationItem" id="olw-Rt-d5x"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qF0-Xg-Gth" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-476" y="470"/>
+            <point key="canvasLocation" x="-94" y="498"/>
         </scene>
         <!--Offer View Controller-->
         <scene sceneID="MA8-2f-27U">
