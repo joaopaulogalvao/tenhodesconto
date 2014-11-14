@@ -97,25 +97,7 @@
     NSLog(@"%@",self.touchedCell);
     NSLog(@"%@",self.relation);
     
-    
-
-//    self.touchedCell = [PFObject objectWithClassName:@"Places"];
-//    
-//    PFQuery *queryForSelectedCat = [PFQuery queryWithClassName:@"Places"];
-//    
-//    [queryForSelectedCat whereKey:@"Categories" equalTo:self.touchedCell];
-//    
-//     NSLog(@"%@",queryForSelectedCat);
-//    
-//
-    // generate a query based on that relation
-//    PFQuery *query = [self.relation query];
-////    
-//    [query whereKey:@"Categories" equalTo:@"Categories"];
-    
-//    NSArray *offersArray = [queryForSelectedCat findObjects];
-    
-    
+        
     
 }
 
