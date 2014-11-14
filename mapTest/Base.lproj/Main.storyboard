@@ -115,9 +115,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7w-vg-cMd" id="5IC-3V-AbM">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="5IM-bS-hbB" kind="push" id="fzD-Ff-w1G"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

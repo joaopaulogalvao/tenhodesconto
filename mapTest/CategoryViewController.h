@@ -12,5 +12,7 @@
 
 @property(nonatomic, strong) PFObject *touchedCell;
 @property(nonatomic, strong) PFRelation *relation;
+@property(nonatomic, strong) PFQuery *queryForTouched;
+
 
 @end

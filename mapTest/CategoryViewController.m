@@ -60,6 +60,7 @@
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
     
+    
     return query;
 }
 
@@ -82,13 +83,54 @@
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
+    // Recognizes touched cell
     self.touchedCell = [self.objects objectAtIndex:indexPath.row];
     
-    [self.touchedCell setObjectId:self.touchedCell[@"Name"]];
+    // Sets de ID for the touched cell to the catRelation key(Which will acces the desired class)
+    [self.touchedCell setObject:self.touchedCell forKey:@"catRelation"];
     
+    
+    
+    // Adds touched cell with the previously clicked ID to the Key that will be related
     self.relation = [self.touchedCell relationForKey:@"Name"];
-    
     [self.relation addObject:self.touchedCell];
+    
+    // Returns Touched Cell
+    NSLog(@"%@",self.touchedCell);
+    NSLog(@"%@",self.relation);
+    
+    
+    //
+//    self.touchedCell = [PFObject objectWithClassName:@"Places"];
+//    
+//    PFQuery *queryForSelectedCat = [PFQuery queryWithClassName:@"Places"];
+//    
+//    [queryForSelectedCat whereKey:@"Categories" equalTo:self.touchedCell];
+//    
+//     NSLog(@"%@",queryForSelectedCat);
+//    
+//    
+//    
+//    [self.touchedCell setObject:self.touchedCell forKey:@"Categories"];
+//    //[self.touchedCell setObject:self.touchedCell forKey:@"catRelation"];
+//    
+//    self.relation = [self.touchedCell relationForKey:@"Name"];
+////    
+//    [self.relation addObject:self.touchedCell];
+//////    
+////    [self.touchedCell saveInBackground];
+//    //self.relation = [self.touchedCell relationForKey:@"catRelation"];
+////    
+////    [self.relation addObject:self.touchedCell];
+//    
+//    // generate a query based on that relation
+//    PFQuery *query = [self.relation query];
+////    
+//    [query whereKey:@"Categories" equalTo:@"Categories"];
+    
+//    NSArray *offersArray = [queryForSelectedCat findObjects];
+    
+    
     
     
     
@@ -97,7 +139,10 @@
 //        // do something with your title variable
 //    }];
     
-    NSLog(@"%@",self.touchedCell);
+    
+    //NSLog(@"%@",self.relation);
+   //NSLog(@"Array: %@",offersArray);
+   
     
     
 }
