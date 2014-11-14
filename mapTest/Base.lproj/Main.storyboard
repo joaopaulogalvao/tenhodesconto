@@ -66,7 +66,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DealsCell" selectionStyle="default" indentationWidth="10" id="tT2-bL-O9S" customClass="PFTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DealsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealsCell" id="tT2-bL-O9S" customClass="PFTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tT2-bL-O9S" id="lo5-lT-HNS">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -115,6 +115,9 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7w-vg-cMd" id="5IC-3V-AbM">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="5IM-bS-hbB" kind="push" id="6mb-GA-1Ns"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

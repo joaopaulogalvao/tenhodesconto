@@ -89,18 +89,16 @@
     // Sets de ID for the touched cell to the catRelation key(Which will acces the desired class)
     [self.touchedCell setObject:self.touchedCell forKey:@"catRelation"];
     
-    
-    
     // Adds touched cell with the previously clicked ID to the Key that will be related
     self.relation = [self.touchedCell relationForKey:@"Name"];
     [self.relation addObject:self.touchedCell];
     
-    // Returns Touched Cell
+    // Returns Touched Cell and its Relation
     NSLog(@"%@",self.touchedCell);
     NSLog(@"%@",self.relation);
     
     
-    //
+
 //    self.touchedCell = [PFObject objectWithClassName:@"Places"];
 //    
 //    PFQuery *queryForSelectedCat = [PFQuery queryWithClassName:@"Places"];
@@ -109,40 +107,14 @@
 //    
 //     NSLog(@"%@",queryForSelectedCat);
 //    
-//    
-//    
-//    [self.touchedCell setObject:self.touchedCell forKey:@"Categories"];
-//    //[self.touchedCell setObject:self.touchedCell forKey:@"catRelation"];
-//    
-//    self.relation = [self.touchedCell relationForKey:@"Name"];
-////    
-//    [self.relation addObject:self.touchedCell];
-//////    
-////    [self.touchedCell saveInBackground];
-//    //self.relation = [self.touchedCell relationForKey:@"catRelation"];
-////    
-////    [self.relation addObject:self.touchedCell];
-//    
-//    // generate a query based on that relation
+//
+    // generate a query based on that relation
 //    PFQuery *query = [self.relation query];
 ////    
 //    [query whereKey:@"Categories" equalTo:@"Categories"];
     
 //    NSArray *offersArray = [queryForSelectedCat findObjects];
     
-    
-    
-    
-    
-//    [self.touchedCell fetchIfNeededInBackgroundWithBlock:^(PFObject *post, NSError *error) {
-//        NSString *title = self.touchedCell[@"Name"];
-//        // do something with your title variable
-//    }];
-    
-    
-    //NSLog(@"%@",self.relation);
-   //NSLog(@"Array: %@",offersArray);
-   
     
     
 }
