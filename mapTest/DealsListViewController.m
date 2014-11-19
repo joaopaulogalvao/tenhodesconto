@@ -49,6 +49,7 @@
 }
 
 
+
 /*
 #pragma mark - Navigation
 
@@ -59,7 +60,7 @@
 }
 */
 
-#pragma mark - PFQueryTableView
+#pragma mark - PFQueryTableViewController delegates
 
 - (PFQuery *)queryForTable
 {
@@ -86,5 +87,30 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    self.touchedDeal = [self objectAtIndexPath:indexPath];
+    
+    
+}
+
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
