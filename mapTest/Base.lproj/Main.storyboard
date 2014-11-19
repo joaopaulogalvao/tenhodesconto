@@ -87,10 +87,10 @@
             </objects>
             <point key="canvasLocation" x="331" y="492"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Bzr-OL-6aT">
             <objects>
-                <tableViewController id="HvS-iE-SKg" sceneMemberID="viewController">
+                <tableViewController id="HvS-iE-SKg" customClass="DetailViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ClB-Kg-hVU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

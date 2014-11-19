@@ -8,6 +8,7 @@
 
 #import "DealsListViewController.h"
 #import "CategoryViewController.h"
+#import "DetailViewController.h"
 
 @interface DealsListViewController ()
 
@@ -50,24 +51,20 @@
 
 
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
-
 #pragma mark - PFQueryTableViewController delegates
 
 - (PFQuery *)queryForTable
 {
+    //Creates a relation based on a clicked cell at CategoryViewController and what the Relation is pointing at on Parse
     PFRelation *dealsRelation = [self.clickedCell relationForKey:@"catRelation"];
     
+    PFQuery *queryForDeals = [PFQuery queryWithClassName:self.parseClassName];
     
-    return [dealsRelation query]    ;
+    [queryForDeals findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        [dealsRelation query];
+    }];
+    
+    return [dealsRelation query];
 }
 
 -(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
@@ -89,10 +86,28 @@
 
 -(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    self.touchedDeal = [self objectAtIndexPath:indexPath];
+    // Recognizes touched Deal
+    self.clickedDeal = [self objectAtIndexPath:indexPath];
     
     
 }
+
+
+ #pragma mark - Navigation
+ 
+ // In a storyboard-based application, you will often want to do a little preparation before navigation
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+ // Get the new view controller using [segue destinationViewController].
+ // Pass the selected object to the new view controller.
+     if ([segue.identifier isEqualToString:@"detail"]) {
+         DetailViewController *destinationDetail = segue.destinationViewController;
+         destinationDetail.clickedDealDetail = self.clickedDeal;
+     }
+   
+     
+     
+ }
+ 
 
 
 @end

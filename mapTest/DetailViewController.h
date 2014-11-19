@@ -10,4 +10,6 @@
 
 @interface DetailViewController : PFQueryTableViewController
 
+@property(nonatomic, strong) PFObject *clickedDealDetail;
+
 @end
