@@ -58,11 +58,6 @@
     //Creates a relation based on a clicked cell at CategoryViewController and what the Relation is pointing at on Parse
     PFRelation *dealsRelation = [self.clickedCell relationForKey:@"catRelation"];
     
-    PFQuery *queryForDeals = [PFQuery queryWithClassName:self.parseClassName];
-    
-    [queryForDeals findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-        [dealsRelation query];
-    }];
     
     return [dealsRelation query];
 }
