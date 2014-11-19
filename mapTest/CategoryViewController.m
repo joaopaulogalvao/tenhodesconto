@@ -7,6 +7,7 @@
 //
 
 #import "CategoryViewController.h"
+#import "DealsListViewController.h"
 
 @interface CategoryViewController ()
 
@@ -84,14 +85,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     // Recognizes touched cell
-    self.touchedCell = [self.objects objectAtIndex:indexPath.row];
-    
-    // Sets de ID for the touched cell to the catRelation key(Which will acces the desired class)
-    [self.touchedCell setObject:self.touchedCell forKey:@"catRelation"];
-    
-    // Adds touched cell with the previously clicked ID to the Key that will be related
-    self.relation = [self.touchedCell relationForKey:@"Name"];
-    [self.relation addObject:self.touchedCell];
+    self.touchedCell = [self objectAtIndexPath:indexPath];
     
     // Returns Touched Cell and its Relation
     NSLog(@"%@",self.touchedCell);
@@ -102,14 +96,27 @@
 }
 
 
-/*
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"deals"]) {
+        DealsListViewController *destinationDeals = segue.destinationViewController;
+        destinationDeals.clickedCell = self.touchedCell;
+    }
+    
+    
 }
-*/
+
 
 @end
+
+
+
+
+
+
+

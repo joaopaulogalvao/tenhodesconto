@@ -10,4 +10,6 @@
 
 @interface DealsListViewController : PFQueryTableViewController
 
+@property(nonatomic, strong) PFObject *clickedCell;
+
 @end

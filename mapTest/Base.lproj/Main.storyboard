@@ -116,7 +116,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5IM-bS-hbB" kind="push" id="6mb-GA-1Ns"/>
+                                    <segue destination="5IM-bS-hbB" kind="push" identifier="DealsCell" id="6mb-GA-1Ns"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

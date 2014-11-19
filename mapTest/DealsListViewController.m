@@ -63,37 +63,10 @@
 
 - (PFQuery *)queryForTable
 {
-    
-    //Access CategoryViewController
-    CategoryViewController *categorySelected = [[CategoryViewController alloc]init];
-    categorySelected.touchedCell = [PFObject objectWithClassName:@"Places"];
-    
-    //PFRelation *relation = [categorySelected.touchedCell relationForKey:@"catRelation"];
-    
-    [categorySelected.touchedCell setObject:categorySelected.touchedCell forKey:@"catRelation"];
-    
-    //Create the Query
-    //PFQuery *queryForSelectedCat = [categorySelected.relation query];
-    PFQuery *queryForPlaces = [PFQuery queryWithClassName:@"Places"];
-    PFQuery *queryForSelectedCat = [PFQuery queryWithClassName:@"Categories"];
-    
-    [queryForSelectedCat whereKey:@"catRelation" matchesKey:@"Categories" inQuery:queryForPlaces];
-    
-    //[queryForSelectedCat whereKey:@"Categories" equalTo:categorySelected.touchedCell];
-    //[queryForSelectedCat whereKey:[NSString stringWithFormat:@"%@",categorySelected.touchedCell]  matchesKey:@"Categories" inQuery:queryForSelectedCat];
+    PFRelation *dealsRelation = [self.clickedCell relationForKey:@"catRelation"];
     
     
-//
-//    [[categorySelected.relation query] findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
-//        
-//        if (error) {
-//            //
-//        } else {
-            NSLog(@"%@",queryForPlaces);
-//        }
-//    }];
-    
-    return queryForSelectedCat;
+    return [dealsRelation query]    ;
 }
 
 -(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
@@ -105,13 +78,9 @@
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    CategoryViewController *categorySelected = [[CategoryViewController alloc]init];
     
-    //cell.textLabel.text = categorySelected.touchedCell[@"Name"];
+    cell.textLabel.text = [object objectForKey:@"Name"];
     
-    //cell.textLabel.text = [object objectForKey:@"Name"];
-    cell.textLabel.text = [categorySelected.touchedCell objectForKey:@"Name"];
-    //cell.textLabel.text = [object objectForKey:categorySelected.touchedCell[@"Name"]];
     
     return cell;
     
