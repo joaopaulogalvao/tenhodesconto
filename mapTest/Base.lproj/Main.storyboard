@@ -66,11 +66,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DealsCell" selectionStyle="default" indentationWidth="10" reuseIdentifier="DealsCell" id="tT2-bL-O9S" customClass="PFTableViewCell">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="DealsCell" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="DealsCell" id="tT2-bL-O9S" customClass="PFTableViewCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="tT2-bL-O9S" id="lo5-lT-HNS">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="HvS-iE-SKg" kind="push" identifier="detail" id="3Fj-Ae-Rvo"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -83,6 +86,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1se-BE-2KE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="331" y="492"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="Bzr-OL-6aT">
+            <objects>
+                <tableViewController id="HvS-iE-SKg" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="ClB-Kg-hVU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCell" id="37Q-Vk-0TC">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="37Q-Vk-0TC" id="Ue4-bv-n6A">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="HvS-iE-SKg" id="aij-b7-fKx"/>
+                            <outlet property="delegate" destination="HvS-iE-SKg" id="8tX-pW-4rU"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="yyv-VD-FgY"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hqY-l2-G91" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730" y="492"/>
         </scene>
         <!--Offers-->
         <scene sceneID="1fu-qp-B1W">
@@ -116,7 +146,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="5IM-bS-hbB" kind="push" identifier="DealsCell" id="6mb-GA-1Ns"/>
+                                    <segue destination="5IM-bS-hbB" kind="push" identifier="deals" id="6mb-GA-1Ns"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

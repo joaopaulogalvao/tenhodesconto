@@ -41,6 +41,7 @@
 		BD74FAA419D44E260030E78A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD74FAA319D44E260030E78A /* OpenGLES.framework */; };
 		BD74FAA619D451AE0030E78A /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD74FAA519D451AE0030E78A /* Social.framework */; };
 		BD74FAA819D452060030E78A /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD74FAA719D452060030E78A /* Accounts.framework */; };
+		BD7C82CE1A1CA93F00A55F93 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD7C82CD1A1CA93F00A55F93 /* DetailViewController.m */; };
 		BD8D3CCE19FA5FE100BEF67A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D3CCD19FA5FE100BEF67A /* MapKit.framework */; };
 		BDEFD2371A137BA800FB2927 /* DealsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEFD2361A137BA800FB2927 /* DealsListViewController.m */; };
 		BDEFD23A1A137F1100FB2927 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEFD2391A137F1100FB2927 /* CategoryViewController.m */; };
@@ -98,6 +99,8 @@
 		BD74FAA319D44E260030E78A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		BD74FAA519D451AE0030E78A /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BD74FAA719D452060030E78A /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BD7C82CC1A1CA93F00A55F93 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		BD7C82CD1A1CA93F00A55F93 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		BD8D3CCD19FA5FE100BEF67A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		BDEFD2351A137BA800FB2927 /* DealsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsListViewController.h; sourceTree = "<group>"; };
 		BDEFD2361A137BA800FB2927 /* DealsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsListViewController.m; sourceTree = "<group>"; };
@@ -182,6 +185,8 @@
 				BDEFD2391A137F1100FB2927 /* CategoryViewController.m */,
 				BDEFD2351A137BA800FB2927 /* DealsListViewController.h */,
 				BDEFD2361A137BA800FB2927 /* DealsListViewController.m */,
+				BD7C82CC1A1CA93F00A55F93 /* DetailViewController.h */,
+				BD7C82CD1A1CA93F00A55F93 /* DetailViewController.m */,
 				BD74FA5B19D43D860030E78A /* Images.xcassets */,
 				BD74FA5D19D43D860030E78A /* LaunchScreen.xib */,
 				BD74FA5219D43D860030E78A /* mapTest.xcdatamodeld */,
@@ -361,6 +366,7 @@
 				BD3E88CE1A11164E0034C6D7 /* OfferViewController.m in Sources */,
 				BD74FA5419D43D860030E78A /* mapTest.xcdatamodeld in Sources */,
 				BD74FA5119D43D860030E78A /* AppDelegate.m in Sources */,
+				BD7C82CE1A1CA93F00A55F93 /* DetailViewController.m in Sources */,
 				BD74FA5719D43D860030E78A /* ViewController.m in Sources */,
 				BDEFD23A1A137F1100FB2927 /* CategoryViewController.m in Sources */,
 				BDEFD2371A137BA800FB2927 /* DealsListViewController.m in Sources */,
