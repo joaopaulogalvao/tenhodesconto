@@ -106,6 +106,10 @@
     if ([segue.identifier isEqualToString:@"deals"]) {
         DealsListViewController *destinationDeals = segue.destinationViewController;
         destinationDeals.clickedCell = self.touchedCell;
+        
+        if(!self.touchedCell){
+            NSLog(@"Error!");
+        }
     }
     
     

@@ -45,6 +45,7 @@
 		BD8D3CCE19FA5FE100BEF67A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD8D3CCD19FA5FE100BEF67A /* MapKit.framework */; };
 		BDEFD2371A137BA800FB2927 /* DealsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEFD2361A137BA800FB2927 /* DealsListViewController.m */; };
 		BDEFD23A1A137F1100FB2927 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDEFD2391A137F1100FB2927 /* CategoryViewController.m */; };
+		F1825C321A1EADF8007D2923 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F1825C311A1EADF8007D2923 /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,6 +107,8 @@
 		BDEFD2361A137BA800FB2927 /* DealsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsListViewController.m; sourceTree = "<group>"; };
 		BDEFD2381A137F1100FB2927 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
 		BDEFD2391A137F1100FB2927 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		F1825C301A1EADF8007D2923 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		F1825C311A1EADF8007D2923 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +182,8 @@
 				BD74FA5519D43D860030E78A /* ViewController.h */,
 				BD74FA5619D43D860030E78A /* ViewController.m */,
 				BD74FA5819D43D860030E78A /* Main.storyboard */,
+				F1825C301A1EADF8007D2923 /* SearchViewController.h */,
+				F1825C311A1EADF8007D2923 /* SearchViewController.m */,
 				BD3E88CC1A11164E0034C6D7 /* OfferViewController.h */,
 				BD3E88CD1A11164E0034C6D7 /* OfferViewController.m */,
 				BDEFD2381A137F1100FB2927 /* CategoryViewController.h */,
@@ -367,6 +372,7 @@
 				BD74FA5419D43D860030E78A /* mapTest.xcdatamodeld in Sources */,
 				BD74FA5119D43D860030E78A /* AppDelegate.m in Sources */,
 				BD7C82CE1A1CA93F00A55F93 /* DetailViewController.m in Sources */,
+				F1825C321A1EADF8007D2923 /* SearchViewController.m in Sources */,
 				BD74FA5719D43D860030E78A /* ViewController.m in Sources */,
 				BDEFD23A1A137F1100FB2927 /* CategoryViewController.m in Sources */,
 				BDEFD2371A137BA800FB2927 /* DealsListViewController.m in Sources */,
