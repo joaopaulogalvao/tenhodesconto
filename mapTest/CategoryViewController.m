@@ -89,7 +89,7 @@
     
     // Returns Touched Cell and its Relation
     NSLog(@"%@",self.touchedCell);
-    NSLog(@"%@",self.relation);
+    
     
         
     
