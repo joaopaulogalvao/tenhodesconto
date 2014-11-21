@@ -17,7 +17,7 @@
                     <connections>
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="Sbd-et-AvG"/>
                         <segue destination="E2C-R6-2DB" kind="relationship" relationship="viewControllers" id="TlY-qM-sHN"/>
-                        <segue destination="ONi-Yx-Dum" kind="relationship" relationship="viewControllers" id="7PE-gF-4is"/>
+                        <segue destination="Orz-p6-RXX" kind="relationship" relationship="viewControllers" id="VyL-cJ-9vs"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cn-Ma-tvd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,19 +116,42 @@
             <point key="canvasLocation" x="730" y="492"/>
         </scene>
         <!--Item-->
-        <scene sceneID="nHG-zS-zcX">
+        <scene sceneID="Ruc-8q-YMc">
             <objects>
-                <viewController id="ONi-Yx-Dum" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="ig1-NT-Lxl">
+                <tableViewController id="Orz-p6-RXX" customClass="SearchViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="c7W-0I-Ra0">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="89I-hh-pGt"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="WpF-48-UW4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="gsr-t7-taX">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Orz-p6-RXX" id="sFe-Kf-UnN"/>
+                            </connections>
+                        </searchBar>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ResultCell" id="NZG-1y-QJA">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NZG-1y-QJA" id="KU1-AU-MWd">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Orz-p6-RXX" id="vxo-10-RXz"/>
+                            <outlet property="delegate" destination="Orz-p6-RXX" id="kED-eR-nzx"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="ISh-pJ-RV4"/>
+                    <connections>
+                        <outlet property="search" destination="gsr-t7-taX" id="FQr-sC-TDs"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aIV-n7-l5w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1049" y="846"/>
+            <point key="canvasLocation" x="-1380" y="835"/>
         </scene>
         <!--Offers-->
         <scene sceneID="1fu-qp-B1W">
@@ -161,9 +184,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="h7w-vg-cMd" id="5IC-3V-AbM">
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="5IM-bS-hbB" kind="push" identifier="deals" id="6mb-GA-1Ns"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -174,6 +194,9 @@
                     <tabBarItem key="tabBarItem" title="Offers" image="offer" id="MJ8-Ae-lfN"/>
                     <navigationItem key="navigationItem" id="olw-Rt-d5x"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <segue destination="5IM-bS-hbB" kind="push" identifier="deals" id="mcN-oC-qfa"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qF0-Xg-Gth" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

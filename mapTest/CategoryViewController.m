@@ -90,7 +90,7 @@
     // Returns Touched Cell and its Relation
     NSLog(@"%@",self.touchedCell);
     
-    
+    [self performSegueWithIdentifier:@"deals" sender:self];
         
     
 }
@@ -106,10 +106,7 @@
     if ([segue.identifier isEqualToString:@"deals"]) {
         DealsListViewController *destinationDeals = segue.destinationViewController;
         destinationDeals.clickedCell = self.touchedCell;
-        
-        if(!self.touchedCell){
-            NSLog(@"Error!");
-        }
+
     }
     
     
