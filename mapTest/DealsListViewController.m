@@ -79,11 +79,11 @@
     
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     // Recognizes touched Deal
     self.clickedDeal = [self objectAtIndexPath:indexPath];
-    
+    [self performSegueWithIdentifier:@"detail" sender:self];
     
 }
 
