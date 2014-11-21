@@ -15,27 +15,26 @@
 @implementation SearchViewController
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    [self clear];
     [self loadObjects];
 }
+
 
 -(PFQuery*)queryForTable{
     PFQuery *nameQuery = [[PFQuery alloc] initWithClassName:@"Places"];
     [nameQuery whereKey:@"Name" containsString:self.search.text];
     NSLog(@"%@", self.search.text);
     
-    /*PFQuery *descriptionQuery = [[PFQuery alloc] initWithClassName:@"Places"];
+    PFQuery *descriptionQuery = [[PFQuery alloc] initWithClassName:@"Places"];
     [descriptionQuery whereKey:@"deal_description" containsString:self.search.text];
     
     PFQuery *categoryQuery = [[PFQuery alloc] initWithClassName:@"Places"];
-    [descriptionQuery whereKey:@"Categories" containsString:self.search.text];
+    [categoryQuery whereKey:@"Categories" containsString:self.search.text];
     
     PFQuery *addressQuery = [[PFQuery alloc] initWithClassName:@"Places"];
-    [descriptionQuery whereKey:@"address" containsString:self.search.text];
+    [addressQuery whereKey:@"address" containsString:self.search.text];
     
-    
-    PFQuery *searchQuery = [PFQuery orQueryWithSubqueries:@[nameQuery, descriptionQuery, categoryQuery, addressQuery]];*/
-    return  nameQuery;
+    PFQuery *searchQuery = [PFQuery orQueryWithSubqueries:@[nameQuery, descriptionQuery, categoryQuery, addressQuery]];
+    return  searchQuery;
 }
 
 -(PFTableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
