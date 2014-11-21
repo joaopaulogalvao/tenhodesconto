@@ -30,6 +30,6 @@
 @property (nonatomic, strong) NSArray* ofertas;
 
 @property (strong, nonatomic) PFUser *user;
-- (IBAction)refreshMap:(id)sender;
+
 
 @end

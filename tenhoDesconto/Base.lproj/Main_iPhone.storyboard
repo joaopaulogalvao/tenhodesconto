@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="d6v-ht-8EW">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="d6v-ht-8EW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
@@ -10,16 +10,12 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="Ei3-tt-ZMI" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="J9b-8T-EMG"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="J9b-8T-EMG"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kfh-k5-m0W">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="dgk-cL-w5Z">
-                        <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
-                        <segue destination="ms2-gh-Xuf" kind="relationship" relationship="rootViewController" id="VVP-Lb-LvU"/>
+                        <segue destination="ms2-gh-Xuf" kind="relationship" relationship="rootViewController" id="ZvD-od-dbc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ied-vm-NLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -116,10 +112,10 @@
             </objects>
             <point key="canvasLocation" x="1635" y="-1265"/>
         </scene>
-        <!--Home-->
+        <!--Categorias-->
         <scene sceneID="R9w-U1-FqH">
             <objects>
-                <viewController storyboardIdentifier="Home" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ms2-gh-Xuf" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Home" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ms2-gh-Xuf" customClass="CategoryViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OMs-WQ-2ci"/>
                         <viewControllerLayoutGuide type="bottom" id="XZR-Mb-fP7"/>
@@ -128,16 +124,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HiK-bx-dR2">
-                                <rect key="frame" x="0.0" y="64" width="320" height="29"/>
-                                <segments>
-                                    <segment title="Nacionais"/>
-                                    <segment title="Internacionais"/>
-                                </segments>
-                                <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sxY-oq-2NT">
-                                <rect key="frame" x="0.0" y="138" width="320" height="380"/>
+                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCells" rowHeight="118" id="bms-i3-W3P" customClass="PFTableViewCell">
@@ -147,17 +135,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dek-o4-ixT" customClass="PFImageView">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="98" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dek-o4-ixT" customClass="PFImageView">
                                                     <rect key="frame" x="5" y="20" width="70" height="70"/>
                                                     <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                                 </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMm-Jo-r5q">
-                                                    <rect key="frame" x="83" y="5" width="217" height="21"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="C90-B8-HF0">
+                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="99" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="C90-B8-HF0">
                                                     <rect key="frame" x="83" y="34" width="217" height="41"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <nil key="highlightedColor"/>
@@ -168,30 +150,70 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <searchBar contentMode="redraw" fixedFrame="YES" placeholder="Localizar pelo endereço mais próximo" translatesAutoresizingMaskIntoConstraints="NO" id="8B5-2n-1ZR">
-                                <rect key="frame" x="0.0" y="93" width="320" height="44"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </searchBar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home" id="4g3-Rd-bBi"/>
-                    <navigationItem key="navigationItem" title="Home" id="oHE-CU-HZa">
-                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="FOc-BG-va6">
-                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            <connections>
-                                <action selector="refreshMap:" destination="ms2-gh-Xuf" id="Tar-Hu-ilQ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Categorias" id="oHE-CU-HZa"/>
                     <connections>
                         <outlet property="ofertasProximas" destination="sxY-oq-2NT" id="QOH-Px-CzC"/>
-                        <outlet property="segementedOfertas" destination="HiK-bx-dR2" id="phX-kx-COP"/>
+                        <segue destination="TpO-rx-I3D" kind="push" id="Sfo-Ag-YLI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lCF-Tk-2pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1186" y="-484"/>
+            <point key="canvasLocation" x="1034" y="-479"/>
+        </scene>
+        <!--Ofertas-->
+        <scene sceneID="1HY-bp-L45">
+            <objects>
+                <tableViewController id="TpO-rx-I3D" customClass="DealsListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="06A-ra-2kD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCells" rowHeight="118" id="eby-QI-9uc" customClass="PFTableViewCell">
+                                <rect key="frame" x="0.0" y="22" width="320" height="118"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eby-QI-9uc" id="j7n-fZ-k6f">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H1x-AD-Uyf" customClass="PFImageView">
+                                            <rect key="frame" x="5" y="20" width="70" height="70"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lz8-me-mQH">
+                                            <rect key="frame" x="83" y="5" width="217" height="21"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="pbf-R8-kFo">
+                                            <rect key="frame" x="83" y="34" width="217" height="41"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="TpO-rx-I3D" id="88S-le-hIz"/>
+                            <outlet property="delegate" destination="TpO-rx-I3D" id="3O9-cv-dld"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Ofertas" id="iqD-Cx-gwW">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="FOc-BG-va6">
+                            <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="w75-FV-dKb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1517" y="-471"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="QkZ-zP-rR8">
@@ -407,7 +429,7 @@
                 <tabBarController storyboardIdentifier="HomeTab" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q8a-Y2-nFg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xb7-5f-Qxb"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <nil key="simulatedBottomBarMetrics"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="v5L-9m-lJ5">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -415,7 +437,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="HQA-Dh-rhM" kind="relationship" relationship="viewControllers" id="B5d-j6-RAm"/>
-                        <segue destination="Ei3-tt-ZMI" kind="relationship" relationship="viewControllers" id="sow-6a-QzT"/>
+                        <segue destination="Ei3-tt-ZMI" kind="relationship" relationship="viewControllers" id="1mX-bb-RDe"/>
                         <segue destination="VwN-vu-0zx" kind="relationship" relationship="viewControllers" id="p8g-kS-mwf"/>
                         <segue destination="wQ2-mF-VNE" kind="relationship" relationship="viewControllers" id="oMW-jU-LH5"/>
                         <segue destination="hZc-nL-Gr2" kind="relationship" relationship="viewControllers" id="4zn-7Z-nPc"/>
@@ -532,6 +554,11 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="iaF-al-CXA">
                                 <rect key="frame" x="0.0" y="64" width="320" height="454"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <searchBar key="tableHeaderView" contentMode="redraw" placeholder="Localizar ofertas" id="jTW-Mu-oGh">
+                                    <rect key="frame" x="10" y="74" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="MCC-Qp-1GU">
                                         <rect key="frame" x="0.0" y="22" width="320" height="44"/>

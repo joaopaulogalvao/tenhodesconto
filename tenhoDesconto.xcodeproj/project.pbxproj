@@ -46,11 +46,13 @@
 		6C3248EC18EDBF2A00F7FE8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6C3248EA18EDBF2A00F7FE8C /* InfoPlist.strings */; };
 		6C3248EE18EDBF2A00F7FE8C /* tenhoDescontoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C3248ED18EDBF2A00F7FE8C /* tenhoDescontoTests.m */; };
 		6C37BD1B18F736010096D8E3 /* Users.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C37BD1A18F736010096D8E3 /* Users.m */; };
+		6C54CA561A1EA422002671B3 /* DealsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C54CA551A1EA422002671B3 /* DealsListViewController.m */; };
 		6C702AF919017A03000FB43A /* GoogleMaps.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C702AF819017A03000FB43A /* GoogleMaps.framework */; };
 		6C702AFA19018E2B000FB43A /* libc++.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C2538C61900242E009E7386 /* libc++.dylib */; };
 		6C702AFE19018F66000FB43A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C702AFD19018F66000FB43A /* MapKit.framework */; };
 		6C79EEDC18F44A3A00C8DA24 /* Cartoes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C79EEDB18F44A3A00C8DA24 /* Cartoes.m */; };
 		6C79EEDF18F44A7300C8DA24 /* CartoesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C79EEDE18F44A7300C8DA24 /* CartoesTableViewController.m */; };
+		6C7FA0F11A154DF600E8E298 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7FA0F01A154DF600E8E298 /* CategoryViewController.m */; };
 		6CA6030219DF7F3100A09EAC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030119DF7F3100A09EAC /* Parse.framework */; };
 		6CA6030419DF7F4100A09EAC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030319DF7F4100A09EAC /* Bolts.framework */; };
 		6CF14D461A12A88200F2A4BD /* OfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF14D451A12A88200F2A4BD /* OfferViewController.m */; };
@@ -120,6 +122,8 @@
 		6C3248ED18EDBF2A00F7FE8C /* tenhoDescontoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = tenhoDescontoTests.m; sourceTree = "<group>"; };
 		6C37BD1918F736010096D8E3 /* Users.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Users.h; sourceTree = "<group>"; };
 		6C37BD1A18F736010096D8E3 /* Users.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Users.m; sourceTree = "<group>"; };
+		6C54CA541A1EA422002671B3 /* DealsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DealsListViewController.h; sourceTree = "<group>"; };
+		6C54CA551A1EA422002671B3 /* DealsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DealsListViewController.m; sourceTree = "<group>"; };
 		6C702AF819017A03000FB43A /* GoogleMaps.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleMaps.framework; path = "GoogleMaps-iOS-1.7.2/GoogleMaps.framework"; sourceTree = "<group>"; };
 		6C702AFB19018E5C000FB43A /* libc++abi.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libc++abi.dylib"; path = "usr/lib/libc++abi.dylib"; sourceTree = SDKROOT; };
 		6C702AFD19018F66000FB43A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -127,6 +131,8 @@
 		6C79EEDB18F44A3A00C8DA24 /* Cartoes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cartoes.m; sourceTree = "<group>"; };
 		6C79EEDD18F44A7300C8DA24 /* CartoesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartoesTableViewController.h; sourceTree = "<group>"; };
 		6C79EEDE18F44A7300C8DA24 /* CartoesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartoesTableViewController.m; sourceTree = "<group>"; };
+		6C7FA0EF1A154DF600E8E298 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		6C7FA0F01A154DF600E8E298 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		6CA6030119DF7F3100A09EAC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		6CA6030319DF7F4100A09EAC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		6CF14D441A12A88200F2A4BD /* OfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferViewController.h; sourceTree = "<group>"; };
@@ -314,6 +320,10 @@
 				6C1C9A8918FD874C000A80FB /* MyAccountViewController.m */,
 				6C22B13C190716740094F4A1 /* MapViewController.h */,
 				6C22B13D190716740094F4A1 /* MapViewController.m */,
+				6C7FA0EF1A154DF600E8E298 /* CategoryViewController.h */,
+				6C7FA0F01A154DF600E8E298 /* CategoryViewController.m */,
+				6C54CA541A1EA422002671B3 /* DealsListViewController.h */,
+				6C54CA551A1EA422002671B3 /* DealsListViewController.m */,
 				6CF14D441A12A88200F2A4BD /* OfferViewController.h */,
 				6CF14D451A12A88200F2A4BD /* OfferViewController.m */,
 			);
@@ -426,6 +436,8 @@
 				6C3248D018EDBF2A00F7FE8C /* AppDelegate.m in Sources */,
 				6C28B02F18F83F4C00B3EC49 /* CadastroViewController.m in Sources */,
 				6C22B13E190716740094F4A1 /* MapViewController.m in Sources */,
+				6C54CA561A1EA422002671B3 /* DealsListViewController.m in Sources */,
+				6C7FA0F11A154DF600E8E298 /* CategoryViewController.m in Sources */,
 				6C2663D118F885090004373D /* HomeViewController.m in Sources */,
 				6C37BD1B18F736010096D8E3 /* Users.m in Sources */,
 				6C3248CC18EDBF2A00F7FE8C /* main.m in Sources */,
