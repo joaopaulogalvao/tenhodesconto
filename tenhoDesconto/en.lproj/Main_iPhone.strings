@@ -1,0 +1,162 @@
+
+/* Class = "IBUILabel"; text = "Assunto"; ObjectID = "1Ri-2g-eUg"; */
+"1Ri-2g-eUg.text" = "Assunto";
+
+/* Class = "IBUILabel"; text = "Email"; ObjectID = "1je-38-flT"; */
+"1je-38-flT.text" = "Email";
+
+/* Class = "IBUILabel"; text = "Password"; ObjectID = "1vk-xd-DEq"; */
+"1vk-xd-DEq.text" = "Password";
+
+/* Class = "IBUIButton"; normalTitle = "Enviar"; ObjectID = "3G8-hz-Y6T"; */
+"3G8-hz-Y6T.normalTitle" = "Enviar";
+
+/* Class = "IBUINavigationItem"; title = "Cadastro"; ObjectID = "3TK-Tp-Z3g"; */
+"3TK-Tp-Z3g.title" = "Cadastro";
+
+/* Class = "IBUILabel"; text = "Email"; ObjectID = "4Wx-xR-waJ"; */
+"4Wx-xR-waJ.text" = "Email";
+
+/* Class = "IBUITabBarItem"; title = "Home"; ObjectID = "4g3-Rd-bBi"; */
+"4g3-Rd-bBi.title" = "Home";
+
+/* Class = "IBUILabel"; text = "Password"; ObjectID = "4uh-BW-L63"; */
+"4uh-BW-L63.text" = "Password";
+
+/* Class = "IBUILabel"; text = "Cidade"; ObjectID = "5If-kL-NWE"; */
+"5If-kL-NWE.text" = "Cidade";
+
+/* Class = "IBUINavigationItem"; title = "Contato"; ObjectID = "7R0-lE-rPn"; */
+"7R0-lE-rPn.title" = "Contato";
+
+/* Class = "IBUIBarButtonItem"; title = "Enviar"; ObjectID = "7rj-8H-7yD"; */
+"7rj-8H-7yD.title" = "Enviar";
+
+/* Class = "IBUIBarButtonItem"; title = "Editar"; ObjectID = "8Sa-ws-5On"; */
+"8Sa-ws-5On.title" = "Editar";
+
+/* Class = "IBUILabel"; text = "Estado"; ObjectID = "Add-xr-Ij3"; */
+"Add-xr-Ij3.text" = "Estado";
+
+/* Class = "IBUILabel"; text = "Nome"; ObjectID = "BrA-jZ-8h6"; */
+"BrA-jZ-8h6.text" = "Nome";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "C90-B8-HF0"; */
+"C90-B8-HF0.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Sexo"; ObjectID = "DWe-DR-eDf"; */
+"DWe-DR-eDf.text" = "Sexo";
+
+/* Class = "IBUILabel"; text = "País"; ObjectID = "FfO-lt-FlV"; */
+"FfO-lt-FlV.text" = "País";
+
+/* Class = "IBUILabel"; text = "País"; ObjectID = "GbK-CC-3Uo"; */
+"GbK-CC-3Uo.text" = "País";
+
+/* Class = "IBUITabBarItem"; title = "Minha Conta"; ObjectID = "HC8-s2-xQo"; */
+"HC8-s2-xQo.title" = "Minha Conta";
+
+/* Class = "IBUILabel"; text = "Login"; ObjectID = "HT6-px-Yj9"; */
+"HT6-px-Yj9.text" = "Login";
+
+/* Class = "IBUIBarButtonItem"; title = "Enviar"; ObjectID = "HY2-dR-PVB"; */
+"HY2-dR-PVB.title" = "Enviar";
+
+/* Class = "IBUILabel"; text = "Aniversário"; ObjectID = "I2e-Jb-Nwj"; */
+"I2e-Jb-Nwj.text" = "Aniversário";
+
+/* Class = "IBUITabBarItem"; title = "Home"; ObjectID = "J9b-8T-EMG"; */
+"J9b-8T-EMG.title" = "Home";
+
+/* Class = "IBUITabBarItem"; title = "Minha Conta"; ObjectID = "JyM-c2-qwW"; */
+"JyM-c2-qwW.title" = "Minha Conta";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "Lz8-me-mQH"; */
+"Lz8-me-mQH.text" = "Label";
+
+/* Class = "IBUIButton"; normalTitle = "X"; ObjectID = "NGJ-zp-cKb"; */
+"NGJ-zp-cKb.normalTitle" = "X";
+
+/* Class = "IBUILabel"; text = "Estado"; ObjectID = "QFU-bR-sge"; */
+"QFU-bR-sge.text" = "Estado";
+
+/* Class = "IBUITextField"; placeholder = "Digite a sua Mensagem"; ObjectID = "QLh-OW-q4u"; */
+"QLh-OW-q4u.placeholder" = "Digite a sua Mensagem";
+
+/* Class = "IBUITabBarItem"; title = "Ofertas Próximas"; ObjectID = "QQp-pM-T4B"; */
+"QQp-pM-T4B.title" = "Ofertas Próximas";
+
+/* Class = "IBUINavigationItem"; title = "Meus Amigos"; ObjectID = "QyX-uh-8xv"; */
+"QyX-uh-8xv.title" = "Meus Amigos";
+
+/* Class = "IBUILabel"; text = "Logout:"; ObjectID = "ShX-Vz-4kR"; */
+"ShX-Vz-4kR.text" = "Logout:";
+
+/* Class = "IBUILabel"; text = "Email"; ObjectID = "TeY-8x-pVO"; */
+"TeY-8x-pVO.text" = "Email";
+
+/* Class = "IBUILabel"; text = "Aniversário"; ObjectID = "UTD-rL-fb5"; */
+"UTD-rL-fb5.text" = "Aniversário";
+
+/* Class = "IBUILabel"; text = "Meus Cartões Fidelidade: "; ObjectID = "Un3-jh-vlx"; */
+"Un3-jh-vlx.text" = "Meus Cartões Fidelidade: ";
+
+/* Class = "IBUINavigationItem"; title = "Ofertas Próximas"; ObjectID = "VwR-sk-haV"; */
+"VwR-sk-haV.title" = "Ofertas Próximas";
+
+/* Class = "IBUILabel"; text = "Nome"; ObjectID = "XbG-1V-nbj"; */
+"XbG-1V-nbj.text" = "Nome";
+
+/* Class = "IBUILabel"; text = "Sexo"; ObjectID = "YSz-8X-X2u"; */
+"YSz-8X-X2u.text" = "Sexo";
+
+/* Class = "IBUIButton"; normalTitle = "Esqueci minha senha"; ObjectID = "Yen-JG-k6p"; */
+"Yen-JG-k6p.normalTitle" = "Esqueci minha senha";
+
+/* Class = "IBUILabel"; text = "Senha"; ObjectID = "aqC-xO-3P9"; */
+"aqC-xO-3P9.text" = "Senha";
+
+/* Class = "IBUITabBarItem"; title = "Contato"; ObjectID = "bHz-OU-Fty"; */
+"bHz-OU-Fty.title" = "Contato";
+
+/* Class = "IBUILabel"; text = "Cidade"; ObjectID = "e8v-1w-uyM"; */
+"e8v-1w-uyM.text" = "Cidade";
+
+/* Class = "IBUISegmentedControl"; eyJ-od-oXM.segmentTitles[0] = "Feminino"; ObjectID = "eyJ-od-oXM"; */
+"eyJ-od-oXM.segmentTitles[0]" = "Feminino";
+
+/* Class = "IBUISegmentedControl"; eyJ-od-oXM.segmentTitles[1] = "Masculino"; ObjectID = "eyJ-od-oXM"; */
+"eyJ-od-oXM.segmentTitles[1]" = "Masculino";
+
+/* Class = "IBUINavigationItem"; title = "Ofertas"; ObjectID = "iqD-Cx-gwW"; */
+"iqD-Cx-gwW.title" = "Ofertas";
+
+/* Class = "IBUISearchBar"; placeholder = "Localizar ofertas"; ObjectID = "jTW-Mu-oGh"; */
+"jTW-Mu-oGh.placeholder" = "Localizar ofertas";
+
+/* Class = "IBUITabBarItem"; title = "Busca"; ObjectID = "npH-pB-LYI"; */
+"npH-pB-LYI.title" = "Busca";
+
+/* Class = "IBUINavigationItem"; title = "Categorias"; ObjectID = "oHE-CU-HZa"; */
+"oHE-CU-HZa.title" = "Categorias";
+
+/* Class = "IBUITabBarItem"; title = "Ofertas Próximas"; ObjectID = "oeU-5C-5kK"; */
+"oeU-5C-5kK.title" = "Ofertas Próximas";
+
+/* Class = "IBUILabel"; text = "Label"; ObjectID = "pbf-R8-kFo"; */
+"pbf-R8-kFo.text" = "Label";
+
+/* Class = "IBUILabel"; text = "Nome"; ObjectID = "qBW-V1-zQz"; */
+"qBW-V1-zQz.text" = "Nome";
+
+/* Class = "IBUINavigationItem"; title = "Minha Conta"; ObjectID = "sSd-Y9-w8x"; */
+"sSd-Y9-w8x.title" = "Minha Conta";
+
+/* Class = "IBUILabel"; text = "Mensagem: "; ObjectID = "vvj-Li-9ns"; */
+"vvj-Li-9ns.text" = "Mensagem: ";
+
+/* Class = "IBUITabBarItem"; title = "Contato"; ObjectID = "wIJ-lN-N7o"; */
+"wIJ-lN-N7o.title" = "Contato";
+
+/* Class = "IBUILabel"; text = "Telefone"; ObjectID = "zom-j6-NYh"; */
+"zom-j6-NYh.text" = "Telefone";
