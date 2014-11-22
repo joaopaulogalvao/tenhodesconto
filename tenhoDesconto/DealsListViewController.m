@@ -82,7 +82,7 @@
     thumbnailImageView.image = [UIImage imageNamed:@"promotion_logo_placeholder.png"];
     thumbnailImageView.file = thumbnail;
     [thumbnailImageView loadInBackground];
-    
+    //
     
     return cell;
     
