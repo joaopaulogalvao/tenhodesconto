@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C152B361A20DA7B009C759E /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C152B351A20DA7B009C759E /* DetailViewController.m */; };
 		6C1C9A8A18FD874C000A80FB /* MyAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C1C9A8918FD874C000A80FB /* MyAccountViewController.m */; };
 		6C1EA05C19055E2900A82530 /* GoogleMaps.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6C1EA05B19055E2900A82530 /* GoogleMaps.bundle */; };
 		6C22B13E190716740094F4A1 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C22B13D190716740094F4A1 /* MapViewController.m */; };
@@ -69,6 +70,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6C152B341A20DA7B009C759E /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		6C152B351A20DA7B009C759E /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		6C1C9A8818FD874C000A80FB /* MyAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyAccountViewController.h; sourceTree = "<group>"; };
 		6C1C9A8918FD874C000A80FB /* MyAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyAccountViewController.m; sourceTree = "<group>"; };
 		6C1EA05B19055E2900A82530 /* GoogleMaps.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = GoogleMaps.bundle; path = "GoogleMaps-iOS-1.7.2/GoogleMaps.framework/Versions/A/Resources/GoogleMaps.bundle"; sourceTree = "<group>"; };
@@ -324,6 +327,8 @@
 				6C7FA0F01A154DF600E8E298 /* CategoryViewController.m */,
 				6C54CA541A1EA422002671B3 /* DealsListViewController.h */,
 				6C54CA551A1EA422002671B3 /* DealsListViewController.m */,
+				6C152B341A20DA7B009C759E /* DetailViewController.h */,
+				6C152B351A20DA7B009C759E /* DetailViewController.m */,
 				6CF14D441A12A88200F2A4BD /* OfferViewController.h */,
 				6CF14D451A12A88200F2A4BD /* OfferViewController.m */,
 			);
@@ -435,6 +440,7 @@
 				6C28B03518F8411300B3EC49 /* LoginViewController.m in Sources */,
 				6C3248D018EDBF2A00F7FE8C /* AppDelegate.m in Sources */,
 				6C28B02F18F83F4C00B3EC49 /* CadastroViewController.m in Sources */,
+				6C152B361A20DA7B009C759E /* DetailViewController.m in Sources */,
 				6C22B13E190716740094F4A1 /* MapViewController.m in Sources */,
 				6C54CA561A1EA422002671B3 /* DealsListViewController.m in Sources */,
 				6C7FA0F11A154DF600E8E298 /* CategoryViewController.m in Sources */,

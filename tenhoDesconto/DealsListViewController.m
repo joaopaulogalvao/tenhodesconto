@@ -7,6 +7,7 @@
 //
 
 #import "DealsListViewController.h"
+#import "DetailViewController.h"
 
 @interface DealsListViewController ()
 
@@ -57,6 +58,8 @@
 }
 
 
+
+
 -(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
     
     static NSString *simpleTableIdentifier = @"DealsCell";
@@ -88,16 +91,28 @@
     
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // Recognizes touched Deal
+    self.clickedDeal = [self objectAtIndexPath:indexPath];
+    [self performSegueWithIdentifier:@"detail" sender:self];
+    
+}
 
-/*
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"detail"]) {
+        DetailViewController *destinationDetail = segue.destinationViewController;
+        destinationDetail.clickedDealDetail = self.clickedDeal;
+    }
 }
-*/
+
 
 @end
 
