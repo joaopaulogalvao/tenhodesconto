@@ -76,6 +76,13 @@
     UILabel *subTitle = (UILabel*)[cell viewWithTag:102];
     subTitle.text = [object objectForKey:@"deal_description"];
     
+    //Offer Photo
+    PFFile *thumbnail = [object objectForKey:@"offerPhoto"];
+    PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
+    thumbnailImageView.image = [UIImage imageNamed:@"promotion_logo_placeholder.png"];
+    thumbnailImageView.file = thumbnail;
+    [thumbnailImageView loadInBackground];
+    
     
     return cell;
     
