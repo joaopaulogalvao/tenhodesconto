@@ -56,6 +56,7 @@
 		6C7FA0F11A154DF600E8E298 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6C7FA0F01A154DF600E8E298 /* CategoryViewController.m */; };
 		6CA6030219DF7F3100A09EAC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030119DF7F3100A09EAC /* Parse.framework */; };
 		6CA6030419DF7F4100A09EAC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030319DF7F4100A09EAC /* Bolts.framework */; };
+		6CDF6B311A21390F00A2B0DF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CDF6B301A21390F00A2B0DF /* Icon.png */; };
 		6CF14D461A12A88200F2A4BD /* OfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF14D451A12A88200F2A4BD /* OfferViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -138,6 +139,7 @@
 		6C7FA0F01A154DF600E8E298 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
 		6CA6030119DF7F3100A09EAC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		6CA6030319DF7F4100A09EAC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
+		6CDF6B301A21390F00A2B0DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		6CF14D441A12A88200F2A4BD /* OfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferViewController.h; sourceTree = "<group>"; };
 		6CF14D451A12A88200F2A4BD /* OfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -258,6 +260,7 @@
 		6C3248C618EDBF2A00F7FE8C /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6CDF6B301A21390F00A2B0DF /* Icon.png */,
 				6C3248C718EDBF2A00F7FE8C /* tenhoDesconto-Info.plist */,
 				6C3248C818EDBF2A00F7FE8C /* InfoPlist.strings */,
 				6C3248CB18EDBF2A00F7FE8C /* main.m */,
@@ -414,6 +417,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CDF6B311A21390F00A2B0DF /* Icon.png in Resources */,
 				6C3248D618EDBF2A00F7FE8C /* Main_iPad.storyboard in Resources */,
 				6C3248DB18EDBF2A00F7FE8C /* Images.xcassets in Resources */,
 				6C3248D318EDBF2A00F7FE8C /* Main_iPhone.storyboard in Resources */,
@@ -542,7 +546,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
@@ -576,7 +580,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
