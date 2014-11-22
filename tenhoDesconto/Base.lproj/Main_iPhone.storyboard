@@ -10,12 +10,16 @@
             <objects>
                 <navigationController definesPresentationContext="YES" id="Ei3-tt-ZMI" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" selectedImage="home" id="J9b-8T-EMG"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="home" id="J9b-8T-EMG"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Kfh-k5-m0W">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="Ric-gx-yXp">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
-                        <segue destination="ms2-gh-Xuf" kind="relationship" relationship="rootViewController" id="ZvD-od-dbc"/>
+                        <segue destination="YJ5-7H-nHG" kind="relationship" relationship="rootViewController" id="c9l-HW-Fgc"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ied-vm-NLE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -84,7 +88,7 @@
         <!--Offer View Controller-->
         <scene sceneID="GDQ-H7-ihK">
             <objects>
-                <viewController storyboardIdentifier="offers" id="EXB-yd-71x" customClass="OfferViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="offersFromMap" id="EXB-yd-71x" customClass="OfferViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3as-Bu-8e9"/>
                         <viewControllerLayoutGuide type="bottom" id="KbP-J1-Bro"/>
@@ -113,77 +117,63 @@
             <point key="canvasLocation" x="1635" y="-1265"/>
         </scene>
         <!--Categorias-->
-        <scene sceneID="R9w-U1-FqH">
+        <scene sceneID="2Yk-e1-FeG">
             <objects>
-                <viewController storyboardIdentifier="Home" autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ms2-gh-Xuf" customClass="CategoryViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="OMs-WQ-2ci"/>
-                        <viewControllerLayoutGuide type="bottom" id="XZR-Mb-fP7"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4kG-KO-CDq">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="sxY-oq-2NT">
-                                <rect key="frame" x="0.0" y="64" width="320" height="454"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCells" rowHeight="118" id="bms-i3-W3P" customClass="PFTableViewCell">
-                                        <rect key="frame" x="0.0" y="22" width="320" height="118"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bms-i3-W3P" id="5JU-j8-aHH">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="98" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dek-o4-ixT" customClass="PFImageView">
-                                                    <rect key="frame" x="5" y="20" width="70" height="70"/>
-                                                    <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                                </imageView>
-                                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="99" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="C90-B8-HF0">
-                                                    <rect key="frame" x="83" y="34" width="217" height="41"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                        <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                    </tableViewCell>
-                                </prototypes>
-                            </tableView>
-                        </subviews>
+                <tableViewController id="YJ5-7H-nHG" customClass="CategoryViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="WJP-9g-9X9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="home" id="4g3-Rd-bBi"/>
-                    <navigationItem key="navigationItem" title="Categorias" id="oHE-CU-HZa"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCells" id="ncf-c6-7JO" customClass="PFTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ncf-c6-7JO" id="NvD-gB-1A8">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="98" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jyB-go-OLQ">
+                                            <rect key="frame" x="72" y="11" width="217" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" tag="99" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ljg-Qd-mc1" customClass="PFImageView">
+                                            <rect key="frame" x="8" y="2" width="40" height="40"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="YJ5-7H-nHG" id="sNL-Js-Ihm"/>
+                            <outlet property="delegate" destination="YJ5-7H-nHG" id="bi1-UW-SY6"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Categorias" id="2Go-Uy-9KX"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
-                        <outlet property="ofertasProximas" destination="sxY-oq-2NT" id="QOH-Px-CzC"/>
-                        <segue destination="TpO-rx-I3D" kind="push" id="Sfo-Ag-YLI"/>
+                        <segue destination="TpO-rx-I3D" kind="push" identifier="deals" id="k5E-zT-0YO"/>
                     </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lCF-Tk-2pt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z8u-f7-DcQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1034" y="-479"/>
+            <point key="canvasLocation" x="1083" y="-492"/>
         </scene>
         <!--Ofertas-->
         <scene sceneID="1HY-bp-L45">
             <objects>
-                <tableViewController id="TpO-rx-I3D" customClass="DealsListViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="06A-ra-2kD">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                <tableViewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="TpO-rx-I3D" customClass="DealsListViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="122" sectionHeaderHeight="22" sectionFooterHeight="22" id="06A-ra-2kD">
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="homeCells" rowHeight="118" id="eby-QI-9uc" customClass="PFTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DealsCell" rowHeight="122" id="eby-QI-9uc" customClass="PFTableViewCell">
                                 <rect key="frame" x="0.0" y="22" width="320" height="118"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="eby-QI-9uc" id="j7n-fZ-k6f">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H1x-AD-Uyf" customClass="PFImageView">
-                                            <rect key="frame" x="5" y="20" width="70" height="70"/>
-                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                        </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lz8-me-mQH">
                                             <rect key="frame" x="83" y="5" width="217" height="21"/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="13"/>
@@ -195,6 +185,9 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Baz-LY-SHk" customClass="PFImageView">
+                                            <rect key="frame" x="5" y="20" width="70" height="70"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -205,11 +198,14 @@
                             <outlet property="delegate" destination="TpO-rx-I3D" id="3O9-cv-dld"/>
                         </connections>
                     </tableView>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" title="Ofertas" id="iqD-Cx-gwW">
                         <barButtonItem key="rightBarButtonItem" style="done" systemItem="refresh" id="FOc-BG-va6">
                             <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics" translucent="NO"/>
                     <connections>
                         <segue destination="aK3-Jw-Bi7" kind="push" id="gVW-aA-stp"/>
                     </connections>
@@ -223,7 +219,7 @@
             <objects>
                 <tableViewController id="aK3-Jw-Bi7" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="fkn-b2-Knr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -243,7 +239,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qVC-0x-mjd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="-471"/>
+            <point key="canvasLocation" x="1970" y="-465"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="QkZ-zP-rR8">
@@ -459,7 +455,7 @@
                 <tabBarController storyboardIdentifier="HomeTab" definesPresentationContext="YES" useStoryboardIdentifierAsRestorationIdentifier="YES" id="q8a-Y2-nFg" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="xb7-5f-Qxb"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="v5L-9m-lJ5">
                         <rect key="frame" x="129" y="330" width="163" height="49"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
@@ -569,10 +565,10 @@
             </objects>
             <point key="canvasLocation" x="595" y="1320"/>
         </scene>
-        <!--Meus Amigos-->
+        <!--Busca-->
         <scene sceneID="3HM-Vn-NGl">
             <objects>
-                <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="Cs1-uM-tQb" sceneMemberID="viewController">
+                <viewController autoresizesArchivedViewToFullSize="NO" title="Busca" automaticallyAdjustsScrollViewInsets="NO" id="Cs1-uM-tQb" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zlk-ez-zz7"/>
                         <viewControllerLayoutGuide type="bottom" id="8qy-MW-xeH"/>
@@ -604,7 +600,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Busca" id="npH-pB-LYI"/>
-                    <navigationItem key="navigationItem" title="Meus Amigos" id="QyX-uh-8xv"/>
+                    <navigationItem key="navigationItem" title="Busca" id="QyX-uh-8xv"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHt-Sn-6r8" userLabel="First Responder" sceneMemberID="firstResponder"/>

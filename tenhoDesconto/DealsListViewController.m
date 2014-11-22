@@ -31,7 +31,7 @@
     if (self) {
         
         // The className to query on
-        self.parseClassName = @"Oferta";
+        self.parseClassName = @"Offers";
         
         // The key of the PFObject to display in the label of the default cell style
         //self.textKey = @"Name";
@@ -45,6 +45,43 @@
     return self;
 }
 
+#pragma mark - PFQueryTableViewController delegates
+
+- (PFQuery *)queryForTable
+{
+    //Creates a relation based on a clicked cell at CategoryViewController and what the Relation is pointing at on Parse
+    PFRelation *dealsRelation = [self.clickedCell relationForKey:@"catRelation"];
+    
+    
+    return [dealsRelation query];
+}
+
+
+-(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
+    
+    static NSString *simpleTableIdentifier = @"DealsCell";
+    
+    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    if (cell == nil) {
+        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    //Offer Title
+    //cell.textLabel.text = [object objectForKey:@"categories"];
+    UILabel* title = (UILabel*)[cell viewWithTag:101];
+    title.text = [object objectForKey:@"companyName"];
+    //cell.textLabel.text = [object objectForKey:@"companyName"];
+    
+    //Offer Subtitle
+    UILabel *subTitle = (UILabel*)[cell viewWithTag:102];
+    subTitle.text = [object objectForKey:@"deal_description"];
+    
+    
+    return cell;
+    
+}
+
+
 /*
 #pragma mark - Navigation
 
@@ -56,3 +93,29 @@
 */
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

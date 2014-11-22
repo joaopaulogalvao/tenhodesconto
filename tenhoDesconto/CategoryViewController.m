@@ -36,6 +36,31 @@
     
 }
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+    [super viewWillAppear:animated];
+    
+    [self loadOfertas];
+    
+    
+    
+    
+    
+}
+
+- (void)loadOfertas
+{
+    PFQuery *query = [PFQuery queryWithClassName:@"Categories"];
+    [query orderByDescending:@"createdAt"];
+    
+    __weak typeof(self) weakSelf = self;
+    [query findObjectsInBackgroundWithBlock:^(NSArray* results, NSError* error) {
+        weakSelf.self.categories = results;
+        [self loadObjects];
+    }];
+}
+
+
 -(id)initWithCoder:(NSCoder *)aDecoder{
     
     self = [super initWithCoder:aDecoder];
@@ -67,18 +92,41 @@
     return query;
 }
 
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    
+    return [self.categories count];
+    
+    
+}
+
 -(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
     
-    static NSString *simpleTableIdentifier = @"CategoriesCell";
+    // Create the Object
+    PFObject* categoriesObject = [self.categories objectAtIndex:indexPath.row];
+     //PFObject *categoriesObject = [PFObject objectWithClassName:@"Categories"];
+    
+    //Configure the cell
+    static NSString *simpleTableIdentifier = @"categoryCells";
     
     PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     if (cell == nil) {
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
-    //PFObject *categoriesObject = [PFObject objectWithClassName:@"Categories"];
     
-    cell.textLabel.text = [object objectForKey:@"Categories"];
+    //Offer Name
+    //cell.textLabel.text = [object objectForKey:@"categories"];
+    UILabel* title = (UILabel*)[cell viewWithTag:98];
+    title.text = [categoriesObject objectForKey:@"categories"];
+    
+    
+    //Offer Photo
+    PFFile *thumbnail = [categoriesObject objectForKey:@"categoryPhoto"];
+    PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:99];
+    thumbnailImageView.image = [UIImage imageNamed:@"promotion_logo_placeholder.png"];
+    thumbnailImageView.file = thumbnail;
+    [thumbnailImageView loadInBackground];
     
     return cell;
     
@@ -91,9 +139,9 @@
     
     // Returns Touched Cell and its Relation
     NSLog(@"%@",self.touchedCell);
-    NSLog(@"%@",self.relation);
+   
     
-    
+    [self performSegueWithIdentifier:@"deals" sender:self];
     
 }
 

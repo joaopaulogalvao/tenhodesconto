@@ -12,5 +12,6 @@
 
 @property(nonatomic, strong) PFObject *touchedCell;
 @property(nonatomic, strong) PFRelation *relation;
+@property(nonatomic, strong) NSArray *categories;
 
 @end

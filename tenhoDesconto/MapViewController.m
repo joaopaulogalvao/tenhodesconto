@@ -103,18 +103,18 @@
             
             
             // Create Object
-            PFObject *offersLocation = [PFObject objectWithClassName:@"Oferta"];
+            PFObject *offersLocation = [PFObject objectWithClassName:@"Offers"];
             
             //Create a point for markers
-            PFGeoPoint *offersPoint = offersLocation[@"coordenadas"];
+            PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
             
             // Check current Location
             NSLog(@"%@", offersPoint);
             
             // Create a query for Places of interest near current location
-            PFQuery *query = [PFQuery queryWithClassName:@"Oferta"];
+            PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
             
-            [query whereKey:@"coordenadas" nearGeoPoint:geoPoint withinKilometers:5.0];
+            [query whereKey:@"places_coordinate" nearGeoPoint:geoPoint withinKilometers:5.0];
             
             NSLog(@"Query: %@",query);
             
@@ -134,14 +134,14 @@
                 for (PFObject *offerObject in offersArray) {
 
                     
-                    PFGeoPoint *offerPoint = [offerObject objectForKey:@"coordenadas"];
+                    PFGeoPoint *offerPoint = [offerObject objectForKey:@"places_coordinate"];
                     
                     MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
                                                              init];
                     
                     geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
                     
-                    geoPointAnnotation.title = offerObject[@"nomeEmpresa"];
+                    geoPointAnnotation.title = offerObject[@"companyName"];
                     
                     [self.appleMap addAnnotation:geoPointAnnotation];
                     
@@ -188,7 +188,7 @@
     
     [mapView setCenterCoordinate:newCenter animated:YES];
     
-    UIViewController *offer = [self.storyboard instantiateViewControllerWithIdentifier:@"offers"];
+    UIViewController *offer = [self.storyboard instantiateViewControllerWithIdentifier:@"offersFromMap"];
     
     [self presentViewController:offer animated:YES completion:nil];
     
