@@ -22,6 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
 }
 
 -(id)initWithCoder:(NSCoder *)aDecoder{
@@ -58,46 +60,69 @@
     
 }
 
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 2;
+    
+}
+
 -(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
     
     static NSString *simpleTableIdentifier = @"DetailCell";
+    static NSString *tableCardIdentifier = @"DetailCardCell";
     
-    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    if (cell == nil) {
+    PFTableViewCell *cell;
+    
+    
+    if (cell == nil && indexPath.section == 0) {
+        
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        
+        //Offer Title
+        UILabel* title = (UILabel*)[cell viewWithTag:103];
+        title.text = [object objectForKey:@"companyName"];
+        //cell.textLabel.text = [object objectForKey:@"companyName"];
+        
+        //Offer Address
+        UILabel* address = (UILabel*)[cell viewWithTag:104];
+        address.text = [object objectForKey:@"address"];
+        
+        //Offer Area
+        UILabel* companyArea = (UILabel*)[cell viewWithTag:105];
+        companyArea.text = [object objectForKey:@"companyArea"];
+        
+        //Offer City
+        UILabel* companyCity = (UILabel*)[cell viewWithTag:106];
+        companyCity.text = [object objectForKey:@"companyCity"];
+        
+        //Offer State
+        UILabel* companyState = (UILabel*)[cell viewWithTag:107];
+        companyState.text = [object objectForKey:@"companyState"];
+        
+        //Offer Telephone
+        UILabel* companyTelephone = (UILabel*)[cell viewWithTag:108];
+        companyTelephone.text = [object objectForKey:@"companyTelephone"];
+        
+        //Offer Opening Time
+        UILabel* companyOpening = (UILabel*)[cell viewWithTag:109];
+        companyOpening.text = [object objectForKey:@"companyOpening"];
+        
+        
+    } else if (cell == nil && indexPath.section == 1){
+        
+        
+        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCardIdentifier];
+        
+        //Offer Description
+        UILabel* dealDescription = (UILabel*)[cell viewWithTag:111];
+        dealDescription.text = [object objectForKey:@"deal_description"];
+        
+        
     }
     
-    //Offer Title
-    UILabel* title = (UILabel*)[cell viewWithTag:103];
-    title.text = [object objectForKey:@"companyName"];
-    //cell.textLabel.text = [object objectForKey:@"companyName"];
     
-    //Offer Address
-    UILabel* address = (UILabel*)[cell viewWithTag:104];
-    address.text = [object objectForKey:@"address"];
     
-    //Offer Area
-    UILabel* companyArea = (UILabel*)[cell viewWithTag:105];
-    companyArea.text = [object objectForKey:@"companyArea"];
-    
-    //Offer City
-    UILabel* companyCity = (UILabel*)[cell viewWithTag:106];
-    companyCity.text = [object objectForKey:@"companyCity"];
-    
-    //Offer State
-    UILabel* companyState = (UILabel*)[cell viewWithTag:107];
-    companyState.text = [object objectForKey:@"companyState"];
-    
-    //Offer Telephone
-    UILabel* companyTelephone = (UILabel*)[cell viewWithTag:108];
-    companyTelephone.text = [object objectForKey:@"companyTelephone"];
-    
-    //Offer Opening Time
-    UILabel* companyOpening = (UILabel*)[cell viewWithTag:109];
-    companyOpening.text = [object objectForKey:@"companyOpening"];
 
-    
-    
 //    cell.textLabel.text = [object objectForKey:@"deal_description"];
     
     
