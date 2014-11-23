@@ -57,6 +57,7 @@
 		6CA6030219DF7F3100A09EAC /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030119DF7F3100A09EAC /* Parse.framework */; };
 		6CA6030419DF7F4100A09EAC /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CA6030319DF7F4100A09EAC /* Bolts.framework */; };
 		6CDF6B311A21390F00A2B0DF /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6CDF6B301A21390F00A2B0DF /* Icon.png */; };
+		6CDF6B341A218D5400A2B0DF /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CDF6B331A218D5400A2B0DF /* SearchViewController.m */; };
 		6CF14D461A12A88200F2A4BD /* OfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6CF14D451A12A88200F2A4BD /* OfferViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -140,6 +141,8 @@
 		6CA6030119DF7F3100A09EAC /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		6CA6030319DF7F4100A09EAC /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
 		6CDF6B301A21390F00A2B0DF /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
+		6CDF6B321A218D5400A2B0DF /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		6CDF6B331A218D5400A2B0DF /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 		6CF14D441A12A88200F2A4BD /* OfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OfferViewController.h; sourceTree = "<group>"; };
 		6CF14D451A12A88200F2A4BD /* OfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OfferViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -332,6 +335,8 @@
 				6C54CA551A1EA422002671B3 /* DealsListViewController.m */,
 				6C152B341A20DA7B009C759E /* DetailViewController.h */,
 				6C152B351A20DA7B009C759E /* DetailViewController.m */,
+				6CDF6B321A218D5400A2B0DF /* SearchViewController.h */,
+				6CDF6B331A218D5400A2B0DF /* SearchViewController.m */,
 				6CF14D441A12A88200F2A4BD /* OfferViewController.h */,
 				6CF14D451A12A88200F2A4BD /* OfferViewController.m */,
 			);
@@ -446,6 +451,7 @@
 				6C28B02F18F83F4C00B3EC49 /* CadastroViewController.m in Sources */,
 				6C152B361A20DA7B009C759E /* DetailViewController.m in Sources */,
 				6C22B13E190716740094F4A1 /* MapViewController.m in Sources */,
+				6CDF6B341A218D5400A2B0DF /* SearchViewController.m in Sources */,
 				6C54CA561A1EA422002671B3 /* DealsListViewController.m in Sources */,
 				6C7FA0F11A154DF600E8E298 /* CategoryViewController.m in Sources */,
 				6C2663D118F885090004373D /* HomeViewController.m in Sources */,
