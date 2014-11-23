@@ -26,12 +26,12 @@
     // Do any additional setup after loading the view.
     self.navigationController.navigationBarHidden = NO;
     
-    UIBarButtonItem *btn =
-    [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
-                                     style:UIBarButtonItemStylePlain
-                                    target:nil
-                                    action:nil];
-    [[self navigationItem] setBackBarButtonItem:btn];
+//    UIBarButtonItem *btn =
+//    [[UIBarButtonItem alloc] initWithTitle:@"Voltar"
+//                                     style:UIBarButtonItemStylePlain
+//                                    target:nil
+//                                    action:nil];
+//    [[self navigationItem] setBackBarButtonItem:btn];
     
     
 }

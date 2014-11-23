@@ -53,6 +53,7 @@
     
     //Creates a relation based on a clicked cell at CategoryViewController and what the Relation is pointing at on Parse
     PFRelation *detailsRelation = [self.clickedDealDetail relationForKey:@"detailRelation"];
+
     
     
     return [detailsRelation query];
@@ -60,65 +61,40 @@
     
 }
 
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    
-    return 2;
-    
-}
+
 
 -(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
     
-    static NSString *simpleTableIdentifier = @"DetailCell";
-    static NSString *tableCardIdentifier = @"DetailCardCell";
-    
-    PFTableViewCell *cell;
+    static NSString *simpleTableIdentifier = @"DetailCardCell";
     
     
-    if (cell == nil && indexPath.section == 0) {
-        
+    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-        
-        //Offer Title
-        UILabel* title = (UILabel*)[cell viewWithTag:103];
-        title.text = [object objectForKey:@"companyName"];
-        //cell.textLabel.text = [object objectForKey:@"companyName"];
-        
-        //Offer Address
-        UILabel* address = (UILabel*)[cell viewWithTag:104];
-        address.text = [object objectForKey:@"address"];
-        
-        //Offer Area
-        UILabel* companyArea = (UILabel*)[cell viewWithTag:105];
-        companyArea.text = [object objectForKey:@"companyArea"];
-        
-        //Offer City
-        UILabel* companyCity = (UILabel*)[cell viewWithTag:106];
-        companyCity.text = [object objectForKey:@"companyCity"];
-        
-        //Offer State
-        UILabel* companyState = (UILabel*)[cell viewWithTag:107];
-        companyState.text = [object objectForKey:@"companyState"];
-        
-        //Offer Telephone
-        UILabel* companyTelephone = (UILabel*)[cell viewWithTag:108];
-        companyTelephone.text = [object objectForKey:@"companyTelephone"];
-        
-        //Offer Opening Time
-        UILabel* companyOpening = (UILabel*)[cell viewWithTag:109];
-        companyOpening.text = [object objectForKey:@"companyOpening"];
-        
-        
-    } else if (cell == nil && indexPath.section == 1){
-        
-        
-        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:tableCardIdentifier];
-        
-        //Offer Description
-        UILabel* dealDescription = (UILabel*)[cell viewWithTag:111];
-        dealDescription.text = [object objectForKey:@"deal_description"];
-        
-        
     }
+        
+    //Offer Title
+    UILabel* title = (UILabel*)[cell viewWithTag:110];
+    title.text = [object objectForKey:@"offerTitle"];
+    //cell.textLabel.text = [object objectForKey:@"companyName"];
+        
+    //Offer Description
+    UILabel* dealDescription = (UILabel*)[cell viewWithTag:111];
+    dealDescription.text = [object objectForKey:@"deal_description"];
+    
+//    //Offer Link
+    UILabel* dealLink = (UILabel*)[cell viewWithTag:112];
+    dealLink.text = [object objectForKey:@"offerLink"];
+    
+    //Card Photo
+    PFFile *thumbnail = [object objectForKey:@"cardPhoto"];
+    PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:109];
+    thumbnailImageView.image = [UIImage imageNamed:@"promotion_logo_placeholder.png"];
+    thumbnailImageView.file = thumbnail;
+    [thumbnailImageView loadInBackground];
+    //
+
     
     
     

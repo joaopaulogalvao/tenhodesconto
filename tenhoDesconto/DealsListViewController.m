@@ -79,6 +79,34 @@
     UILabel *subTitle = (UILabel*)[cell viewWithTag:102];
     subTitle.text = [object objectForKey:@"deal_description"];
     
+    //Offer Address
+    UILabel* address = (UILabel*)[cell viewWithTag:103];
+    address.text = [object objectForKey:@"address"];
+    
+    //Offer Area
+    UILabel* companyArea = (UILabel*)[cell viewWithTag:104];
+    companyArea.text = [object objectForKey:@"companyArea"];
+    
+    //Offer City
+    UILabel* companyCity = (UILabel*)[cell viewWithTag:105];
+    companyCity.text = [object objectForKey:@"companyCity"];
+    
+    //Offer State
+    UILabel* companyState = (UILabel*)[cell viewWithTag:106];
+    companyState.text = [object objectForKey:@"companyState"];
+    
+    //Offer Telephone
+    UILabel* companyTelephone = (UILabel*)[cell viewWithTag:107];
+    companyTelephone.text = [object objectForKey:@"companyTelephone"];
+    
+    //Offer Opening Time
+    UILabel* companyOpening = (UILabel*)[cell viewWithTag:108];
+    companyOpening.text = [object objectForKey:@"companyOpening"];
+
+    
+    
+
+    
     //Offer Photo
     PFFile *thumbnail = [object objectForKey:@"offerPhoto"];
     PFImageView *thumbnailImageView = (PFImageView*)[cell viewWithTag:100];
