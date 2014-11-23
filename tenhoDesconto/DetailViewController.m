@@ -67,8 +67,38 @@
         cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
     }
     
+    //Offer Title
+    UILabel* title = (UILabel*)[cell viewWithTag:103];
+    title.text = [object objectForKey:@"companyName"];
+    //cell.textLabel.text = [object objectForKey:@"companyName"];
     
-    cell.textLabel.text = [object objectForKey:@"deal_description"];
+    //Offer Address
+    UILabel* address = (UILabel*)[cell viewWithTag:104];
+    address.text = [object objectForKey:@"address"];
+    
+    //Offer Area
+    UILabel* companyArea = (UILabel*)[cell viewWithTag:105];
+    companyArea.text = [object objectForKey:@"companyArea"];
+    
+    //Offer City
+    UILabel* companyCity = (UILabel*)[cell viewWithTag:106];
+    companyCity.text = [object objectForKey:@"companyCity"];
+    
+    //Offer State
+    UILabel* companyState = (UILabel*)[cell viewWithTag:107];
+    companyState.text = [object objectForKey:@"companyState"];
+    
+    //Offer Telephone
+    UILabel* companyTelephone = (UILabel*)[cell viewWithTag:108];
+    companyTelephone.text = [object objectForKey:@"companyTelephone"];
+    
+    //Offer Opening Time
+    UILabel* companyOpening = (UILabel*)[cell viewWithTag:109];
+    companyOpening.text = [object objectForKey:@"companyOpening"];
+
+    
+    
+//    cell.textLabel.text = [object objectForKey:@"deal_description"];
     
     
     return cell;
