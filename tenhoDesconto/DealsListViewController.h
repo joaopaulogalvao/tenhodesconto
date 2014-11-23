@@ -12,5 +12,7 @@
 
 @property(nonatomic, strong) PFObject *clickedCell;
 @property(nonatomic, strong) PFObject *clickedDeal;
+@property (weak, nonatomic) IBOutlet PFImageView *paidOfferImageView;
+@property (weak, nonatomic) IBOutlet UIView *paidOfferView;
 
 @end

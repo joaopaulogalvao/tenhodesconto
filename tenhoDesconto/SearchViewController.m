@@ -45,12 +45,11 @@
 
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    
+    
     [self.search resignFirstResponder];
     [self clear];
-    //[self canBecomeFirstResponder];
-    
-    
-//    
+
 }
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{

@@ -18,6 +18,49 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    PFQuery *queryPaidOffer = [PFQuery queryWithClassName:@"Paid_Offers"];
+    NSLog(@"query: %@",queryPaidOffer);
+    
+    [queryPaidOffer findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        
+        if (!error) {
+            
+            //PFObject *paidOfferObject = [PFObject objectWithClassName:@"Paid_Offers"];
+            
+            NSLog(@"%@",objects);
+            
+            //Offer Photo
+            PFFile *thumbnail = [[queryPaidOffer getFirstObject] objectForKey:@"paidOfferPhoto"];
+            NSLog(@"Thumbnail: %@",thumbnail);
+            
+            [thumbnail getDataInBackgroundWithBlock:^(NSData *data, NSError *error) {
+                if (!error) {
+                    //self.paidOfferImageView = [[PFImageView alloc]initWithImage:[UIImage imageWithData:data]];
+//                    UIImage *paidOfferImage = [UIImage imageWithData:data];
+                    NSLog(@"PaidOfferImageView: %@",self.paidOfferImageView);
+                    self.paidOfferImageView.image = [UIImage imageNamed:@"promotion_logo_placeholder.png"];
+                    self.paidOfferImageView.file = thumbnail;
+                    
+                    NSLog(@"Thumbnail: %@",self.paidOfferImageView);
+                    
+                    //[paidOfferImageView viewWithTag:200];
+                    self.paidOfferView = self.paidOfferImageView;
+                    [self.paidOfferImageView setImage:[UIImage imageNamed:@"promotion_logo_placeholder.png"]];
+                    [self.paidOfferImageView loadInBackground];
+                    
+                }
+            }];
+            
+           
+        }
+        
+        
+    }];
+    
+    
+    
+        
+    
 }
 
 - (void)didReceiveMemoryWarning {
