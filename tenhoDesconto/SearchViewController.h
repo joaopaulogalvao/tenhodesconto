@@ -8,6 +8,6 @@
 
 #import <Parse/Parse.h>
 
-@interface SearchViewController : PFQueryTableViewController<UISearchBarDelegate>
+@interface SearchViewController : PFQueryTableViewController<UISearchBarDelegate, UITextFieldDelegate>
 
 @end

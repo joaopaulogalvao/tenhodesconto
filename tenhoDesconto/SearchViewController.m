@@ -10,6 +10,7 @@
 
 @interface SearchViewController ()
 @property(strong, nonatomic)IBOutlet UISearchBar *search;
+@property(nonatomic, strong)NSMutableArray *searchResults;
 
 @end
 
@@ -24,6 +25,7 @@
 //    }
     
     self.search.delegate = self;
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,7 +45,10 @@
 
 
 -(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    [self.search resignFirstResponder];
     [self clear];
+    //[self canBecomeFirstResponder];
+    
     
 //    
 }
@@ -57,15 +62,27 @@
 }
 
 -(void)searchBarTextDidEndEditing:(UISearchBar *)searchBar{
+    [self clear];
     
 }
 
 
 
+-(void)viewWillAppear:(BOOL)animated{
+    
+//    [self.searchResults removeAllObjects];
+    [self becomeFirstResponder];
+  
+    
+    
+}
+
 
 #pragma mark - PFQueryTableViewController
 
 -(PFQuery*)queryForTable{
+    
+    
     
     PFQuery *categoryQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
     [categoryQuery whereKey:@"categories" containsString:self.search.text];
@@ -94,7 +111,16 @@
     
     
     
+    
+    
     PFQuery *searchQuery = [PFQuery orQueryWithSubqueries:@[categoryQuery,nameQuery, addressQuery,companyCityQuery,companyAreaQuery,benefitCardQuery,companyStateQuery, descriptionQuery]];
+    
+//    NSArray *results  = [searchQuery findObjects];
+//    
+//    NSLog(@"%@", results);
+//    
+//    
+//    [self.searchResults addObjectsFromArray:results];
     
     return  searchQuery;
 }
