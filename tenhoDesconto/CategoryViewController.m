@@ -87,6 +87,7 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    [query orderByDescending:@"createdAt"];
     
     
     return query;
@@ -100,10 +101,13 @@
     
 }
 
+
+
 -(PFTableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath object:(PFObject *)object{
     
     // Create the Object
     PFObject* categoriesObject = [self.categories objectAtIndex:indexPath.row];
+    
      //PFObject *categoriesObject = [PFObject objectWithClassName:@"Categories"];
     
     //Configure the cell
@@ -119,6 +123,7 @@
     //cell.textLabel.text = [object objectForKey:@"categories"];
     UILabel* title = (UILabel*)[cell viewWithTag:98];
     title.text = [categoriesObject objectForKey:@"categories"];
+    
     
     
     //Offer Photo
