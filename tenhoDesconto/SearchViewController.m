@@ -83,36 +83,42 @@
     
     
     
-    PFQuery *categoryQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-    [categoryQuery whereKey:@"categories" containsString:self.search.text];
+        
+        NSString *regexString = [NSString stringWithFormat:@"%@",self.search.text];
+        
+        PFQuery *categoryQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
+        [categoryQuery whereKey:@"categories" matchesRegex:regexString modifiers:@"i"];
+        
+        PFQuery *nameQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
+        [nameQuery whereKey:@"companyName" matchesRegex:regexString modifiers:@"i"];
+        NSLog(@"%@", self.search.text);
+        
+        PFQuery *addressQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
+        [addressQuery whereKey:@"address" matchesRegex:regexString modifiers:@"i"];
+        
+        PFQuery *companyCityQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
+        [companyCityQuery whereKey:@"companyCity" matchesRegex:regexString modifiers:@"i"];
+        
+        PFQuery *companyAreaQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
+        [companyAreaQuery whereKey:@"companyArea" matchesRegex:regexString modifiers:@"i"];
+        
+        PFQuery *benefitCardQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
+        [benefitCardQuery whereKey:@"benefitCard" matchesRegex:regexString modifiers:@"i"];
+        
+        PFQuery *companyStateQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
+        [companyStateQuery whereKey:@"companyState" matchesRegex:regexString modifiers:@"i"];
+        
+        PFQuery *descriptionQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
+        [descriptionQuery whereKey:@"deal_description" matchesRegex:regexString modifiers:@"i"];
+        
+         PFQuery *searchQuery = [PFQuery orQueryWithSubqueries:@[categoryQuery,nameQuery, addressQuery,companyCityQuery,companyAreaQuery,benefitCardQuery,companyStateQuery, descriptionQuery]];
+        
+        
+        
     
-    PFQuery *nameQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-    [nameQuery whereKey:@"companyName" containsString:self.search.text];
-    NSLog(@"%@", self.search.text);
-    
-    PFQuery *addressQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-    [addressQuery whereKey:@"address" containsString:self.search.text];
-    
-    PFQuery *companyCityQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-    [companyCityQuery whereKey:@"companyCity" containsString:self.search.text];
-    
-    PFQuery *companyAreaQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-    [companyAreaQuery whereKey:@"companyArea" containsString:self.search.text];
-    
-    PFQuery *benefitCardQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-    [benefitCardQuery whereKey:@"benefitCard" containsString:self.search.text];
-    
-    PFQuery *companyStateQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-    [companyStateQuery whereKey:@"companyState" containsString:self.search.text];
-    
-    PFQuery *descriptionQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-    [descriptionQuery whereKey:@"companyState" containsString:self.search.text];
     
     
-    
-    
-    
-    PFQuery *searchQuery = [PFQuery orQueryWithSubqueries:@[categoryQuery,nameQuery, addressQuery,companyCityQuery,companyAreaQuery,benefitCardQuery,companyStateQuery, descriptionQuery]];
+   
     
 //    NSArray *results  = [searchQuery findObjects];
 //    

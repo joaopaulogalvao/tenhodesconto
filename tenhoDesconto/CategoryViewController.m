@@ -51,11 +51,11 @@
 - (void)loadOfertas
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Categories"];
-    [query orderByDescending:@"createdAt"];
+    [query orderByAscending:@"categories"];
     
-    __weak typeof(self) weakSelf = self;
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray* results, NSError* error) {
-        weakSelf.self.categories = results;
+         self.categories = results;
         [self loadObjects];
     }];
 }
@@ -87,7 +87,7 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query orderByDescending:@"createdAt"];
+    [query orderByAscending:@"categories"];
     
     
     return query;
