@@ -88,7 +88,7 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query orderByDescending:@"createdAt"];
+    [query orderByAscending:@"categories"];
     
     
     return query;

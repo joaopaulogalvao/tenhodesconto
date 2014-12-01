@@ -84,7 +84,8 @@
     
     if(![self.search.text isEqualToString:@""]){
         
-        NSString *regexString = [NSString stringWithFormat:@"%@", self.search.text];
+        
+        NSString *regexString = [NSString stringWithFormat:@"%@",self.search.text];
         
         PFQuery *categoryQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
         [categoryQuery whereKey:@"categories" matchesRegex:regexString modifiers:@"i"];
