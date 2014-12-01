@@ -51,11 +51,12 @@
 - (void)loadOfertas
 {
     PFQuery *query = [PFQuery queryWithClassName:@"Categories"];
-    [query orderByDescending:@"createdAt"];
+    [query orderByDescending:@"Name"];
     
-    __weak typeof(self) weakSelf = self;
+    
+    
     [query findObjectsInBackgroundWithBlock:^(NSArray* results, NSError* error) {
-        weakSelf.self.categories = results;
+        self.categories = results;
         [self loadObjects];
     }];
 }
@@ -87,7 +88,7 @@
 - (PFQuery *)queryForTable
 {
     PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
-    [query orderByDescending:@"createdAt"];
+    [query orderByAscending:@"categories"];
     
     
     return query;
@@ -140,7 +141,7 @@
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
     // Recognizes touched cell
-    self.touchedCell = [self objectAtIndexPath:indexPath];
+    self.touchedCell = [self.categories objectAtIndex:indexPath.row];
     
     // Returns Touched Cell and its Relation
     NSLog(@"%@",self.touchedCell);

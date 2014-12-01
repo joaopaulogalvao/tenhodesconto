@@ -10,31 +10,31 @@
 	<string>tenhoDesconto</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>97901F39-51DB-4BF5-9FA5-6B2A13985553</key>
-		<string>joao.local</string>
+		<key>1F08511D5E34FDB7F856E5C0CCC8F74EFCEFFE81</key>
+		<string>https://github.com/joaopaulogalvao/tenhodesconto</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>tenhoDesconto.xcodeproj/project.xcworkspace</string>
+	<string>tenhoDesconto.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>97901F39-51DB-4BF5-9FA5-6B2A13985553</key>
+		<key>1F08511D5E34FDB7F856E5C0CCC8F74EFCEFFE81</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>joao.local</string>
+	<string>https://github.com/joaopaulogalvao/tenhodesconto</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>97901F39-51DB-4BF5-9FA5-6B2A13985553</string>
+	<string>1F08511D5E34FDB7F856E5C0CCC8F74EFCEFFE81</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>97901F39-51DB-4BF5-9FA5-6B2A13985553</string>
+			<string>1F08511D5E34FDB7F856E5C0CCC8F74EFCEFFE81</string>
 			<key>IDESourceControlWCCName</key>
-			<string>tenhoDesconto</string>
+			<string>mapTest</string>
 		</dict>
 	</array>
 </dict>
