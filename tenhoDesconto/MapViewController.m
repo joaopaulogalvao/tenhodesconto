@@ -74,7 +74,7 @@
     CLLocationCoordinate2D coordinateActual = [self.location coordinate];
     
     // Map's zoom
-    MKCoordinateSpan zoom = MKCoordinateSpanMake(0.010, 0.010);
+    MKCoordinateSpan zoom = MKCoordinateSpanMake(10.0, 10.0); //MKCoordinateSpan zoom = MKCoordinateSpanMake(0.010, 0.010);
     
     // Create a region
     MKCoordinateRegion region = MKCoordinateRegionMake(coordinateActual, zoom);
@@ -87,7 +87,7 @@
     //Map's type
     self.appleMap.mapType = MKMapTypeStandard;
     
-    
+
 }
 
 
@@ -161,7 +161,7 @@
 #pragma mark - MKMapViewDelegate
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
-    MKPinAnnotationView *pinOffers = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
+    MKAnnotationView *pinOffers = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
     
     pinOffers.image = [UIImage imageNamed:@"tenhoDesconto_logo.png"];
     
@@ -170,8 +170,6 @@
     pinOffers.canShowCallout = YES;
     
     pinOffers.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    pinOffers.animatesDrop = YES;
     
     return pinOffers;
 }
