@@ -40,7 +40,7 @@
             CLPlacemark *addressPlacemark = placeMarks[0];
             
             
-            
+            // some comment to test commits updates
             //Zoom the map in appropriately.
             
             float zoom = 5.0;
