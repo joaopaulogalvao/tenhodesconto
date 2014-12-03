@@ -16,15 +16,57 @@
 
 
 
-@interface MapViewController (){
+@interface MapViewController () <UISearchBarDelegate>{
     
 //    GMSMapView *mapView_;
 }
 
+@property(strong, nonatomic)IBOutlet UISearchBar *searchBar;
+-(IBAction)search;
 
 @end
 
 @implementation MapViewController
+
+-(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
+    
+    [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray* placeMarks, NSError *error){
+        if(error){
+            //handle error
+        }else if(placeMarks.count > 0){
+            
+            //Get the placemark
+            CLPlacemark *addressPlacemark = placeMarks[0];
+            
+            
+            
+            //Zoom the map in appropriately.
+            
+            float zoom = 5.0;
+            if(addressPlacemark.country){
+                zoom -= 3.0;
+                if(addressPlacemark.administrativeArea){
+                    zoom -= 1.0;
+                    if(addressPlacemark.subAdministrativeArea){
+                        zoom -= 0.5;
+                        if(addressPlacemark.thoroughfare){
+                            zoom -= 0.45;
+                        }
+                    }
+                }
+            }
+            
+            NSLog(@"Zoom = %f", zoom);
+            MKCoordinateRegion coordinateRegion = MKCoordinateRegionMake(addressPlacemark.location.coordinate, MKCoordinateSpanMake(zoom, zoom));
+            
+            //Move the map to the placemark
+            [self.appleMap setRegion:coordinateRegion animated:YES];
+            
+        
+        }
+    }];
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -41,6 +83,64 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(IBAction)search{
+    self.searchBar.hidden = !self.searchBar.hidden;
+}
+
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    
+    NSLog(@"latitude delta = %f", mapView.region.span.latitudeDelta);
+    if(mapView.region.span.latitudeDelta < 0.02){
+        NSLog(@"threshold passed");
+        
+        PFGeoPoint *centerPoint = [PFGeoPoint geoPointWithLatitude:mapView.region.center.latitude longitude:mapView.region.center.longitude];
+        
+        // Create Object
+        PFObject *offersLocation = [PFObject objectWithClassName:@"Offers"];
+        
+        //Create a point for markers
+        PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
+        
+        // Check current Location
+        //NSLog(@"%@", offersPoint);
+        
+        // Create a query for Places of interest near current location
+        PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
+        
+        [query whereKey:@"places_coordinate" nearGeoPoint:centerPoint withinKilometers:5.0];
+        
+        //NSLog(@"Query: %@",query);
+        
+        // Limit the query
+        query.limit = 10;
+        
+        // Store query in an Array
+        NSArray *offersArray = [query findObjects];
+        
+        
+        NSLog(@"Array: %@",offersArray);
+        
+        
+        
+        for (PFObject *offerObject in offersArray) {
+            
+            
+            PFGeoPoint *offerPoint = [offerObject objectForKey:@"places_coordinate"];
+            
+            MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
+                                                     init];
+            
+            geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
+            
+            geoPointAnnotation.title = offerObject[@"companyName"];
+            
+            [self.appleMap addAnnotation:geoPointAnnotation];
+            
+            NSLog(@"Annotation: %@",geoPointAnnotation);
+            
+        }
+    }
+}
 
 
 
@@ -48,6 +148,10 @@
 {
     [super viewDidLoad];
 
+    
+    //Hide search bar
+    [self.view bringSubviewToFront:self.searchBar];
+    self.searchBar.hidden = YES;
     
     if (nil == self.locationManager){
         self.locationManager = [[CLLocationManager alloc] init];
