@@ -138,7 +138,7 @@
                         zoom -= 4.0;
                         NSLog(@"Area: %@",addressPlacemark);
                         
-                        if(addressPlacemark.thoroughfare){
+                        if(addressPlacemark.thoroughfare    ){
                             zoom -= 2.0;
                         }
                     }
