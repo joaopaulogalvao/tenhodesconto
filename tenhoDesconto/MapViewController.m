@@ -28,46 +28,6 @@
 
 @implementation MapViewController
 
--(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
-    CLGeocoder *geocoder = [[CLGeocoder alloc] init];
-    
-    [geocoder geocodeAddressString:searchBar.text completionHandler:^(NSArray* placeMarks, NSError *error){
-        if(error){
-            //handle error
-        }else if(placeMarks.count > 0){
-            
-            //Get the placemark
-            CLPlacemark *addressPlacemark = placeMarks[0];
-            
-            
-            // some comment to test commits updates
-            //Zoom the map in appropriately.
-            
-            float zoom = 5.0;
-            if(addressPlacemark.country){
-                zoom -= 3.0;
-                if(addressPlacemark.administrativeArea){
-                    zoom -= 1.0;
-                    if(addressPlacemark.subAdministrativeArea){
-                        zoom -= 0.5;
-                        if(addressPlacemark.thoroughfare){
-                            zoom -= 0.45;
-                        }
-                    }
-                }
-            }
-            
-            NSLog(@"Zoom = %f", zoom);
-            MKCoordinateRegion coordinateRegion = MKCoordinateRegionMake(addressPlacemark.location.coordinate, MKCoordinateSpanMake(zoom, zoom));
-            
-            //Move the map to the placemark
-            [self.appleMap setRegion:coordinateRegion animated:YES];
-            
-        
-        }
-    }];
-}
-
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -83,9 +43,7 @@
     // Dispose of any resources that can be recreated.
 }
 
--(IBAction)search{
-    self.searchBar.hidden = !self.searchBar.hidden;
-}
+
 
 -(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
     
@@ -102,7 +60,7 @@
         PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
         
         // Check current Location
-        //NSLog(@"%@", offersPoint);
+        NSLog(@"%@", offersPoint);
         
         // Create a query for Places of interest near current location
         PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
@@ -194,7 +152,7 @@
 
 }
 
-<<<<<<< HEAD
+
 #pragma mark - Search Actions
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
@@ -245,13 +203,11 @@
 }
 
 
+
 -(IBAction)search{
     
     self.searchBar.hidden = !self.searchBar.hidden;
 }
-=======
->>>>>>> parent of fffed33... Corrected delay when updating region with findObjectsInBackground. Adjusts on zoom related to areas on search field.
-
 
 #pragma mark - Location Manager Callbacks
 
