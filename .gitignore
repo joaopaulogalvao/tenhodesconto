@@ -12,10 +12,11 @@ build/
 xcuserdata
 *.xccheckout
 *.moved-aside
+*.xcuserstate
+
 DerivedData
 *.hmap
 *.ipa
-*.xcuserstate
 *.xcbkptlist
 
 # CocoaPods
