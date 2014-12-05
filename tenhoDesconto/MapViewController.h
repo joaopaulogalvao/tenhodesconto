@@ -12,7 +12,7 @@
 #import <CoreLocation/CoreLocation.h>
 #import <MapKit/MapKit.h>
 
-@interface MapViewController : UIViewController<CLLocationManagerDelegate,GMSMapViewDelegate,MKMapViewDelegate>
+@interface MapViewController : UIViewController<CLLocationManagerDelegate,GMSMapViewDelegate,MKMapViewDelegate,UISearchBarDelegate>
 
 @property(nonatomic, strong)CLLocationManager *locationManager;
 @property(nonatomic, strong) MKPinAnnotationView *geoPointAnnotation;

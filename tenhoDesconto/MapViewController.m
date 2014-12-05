@@ -60,6 +60,7 @@
     
     //Hide search bar
     [self.view bringSubviewToFront:self.searchBar];
+//    self.searchBar.delegate = self;
     self.searchBar.hidden = YES;
     
     if (nil == self.locationManager){
@@ -153,7 +154,13 @@
     }];
 }
 
-
+-(void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    
+    
+    [self.searchBar resignFirstResponder];
+//    [self clear];
+    
+}
 
 -(IBAction)search{
     
