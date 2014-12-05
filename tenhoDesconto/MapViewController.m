@@ -43,61 +43,12 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-
--(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+-(void)viewWillLayoutSubviews{
+    [super viewWillLayoutSubviews];
     
-    NSLog(@"latitude delta = %f", mapView.region.span.latitudeDelta);
-    if(mapView.region.span.latitudeDelta < 0.02){
-        NSLog(@"threshold passed");
-        
-        PFGeoPoint *centerPoint = [PFGeoPoint geoPointWithLatitude:mapView.region.center.latitude longitude:mapView.region.center.longitude];
-        
-        // Create Object
-        PFObject *offersLocation = [PFObject objectWithClassName:@"Offers"];
-        
-        //Create a point for markers
-        PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
-        
-        // Check current Location
-        NSLog(@"%@", offersPoint);
-        
-        // Create a query for Places of interest near current location
-        PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
-        
-        [query whereKey:@"places_coordinate" nearGeoPoint:centerPoint withinKilometers:5.0];
-        
-        //NSLog(@"Query: %@",query);
-        
-        // Limit the query
-        query.limit = 10;
-        
-        // Store query in an Array
-        NSArray *offersArray = [query findObjects];
-        
-        
-        NSLog(@"Array: %@",offersArray);
-        
-        
-        
-        for (PFObject *offerObject in offersArray) {
-            
-            
-            PFGeoPoint *offerPoint = [offerObject objectForKey:@"places_coordinate"];
-            
-            MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
-                                                     init];
-            
-            geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
-            
-            geoPointAnnotation.title = offerObject[@"companyName"];
-            
-            [self.appleMap addAnnotation:geoPointAnnotation];
-            
-            NSLog(@"Annotation: %@",geoPointAnnotation);
-            
-        }
-    }
+    
+    
+    //    mapView_.padding = UIEdgeInsetsMake(self.topLayoutGuide.length + 5, 0, self.bottomLayoutGuide.length + 5, 0);
 }
 
 
@@ -227,7 +178,7 @@
             PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
             
             // Check current Location
-            NSLog(@"%@", offersPoint);
+            NSLog(@"OffersPoint: %@", offersPoint);
             
             // Create a query for Places of interest near current location
             PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
@@ -240,34 +191,31 @@
             query.limit = 10;
             
             // Store query in an Array
-            NSArray *offersArray = [query findObjects];
-            
-            
-            NSLog(@"Array: %@",offersArray);
-            
-            
-            
-            
-            if (!error) {
-                for (PFObject *offerObject in offersArray) {
-
-                    
-                    PFGeoPoint *offerPoint = [offerObject objectForKey:@"places_coordinate"];
-                    
-                    MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
-                                                             init];
-                    
-                    geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
-                    
-                    geoPointAnnotation.title = offerObject[@"companyName"];
-                    
-                    [self.appleMap addAnnotation:geoPointAnnotation];
-                    
-                    NSLog(@"Annotation: %@",geoPointAnnotation);
-                    
+            [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+                
+                NSLog(@"Array: %@",objects);
+                
+                if (!error) {
+                    for (PFObject *offerObject in objects) {
+                        
+                        
+                        PFGeoPoint *offerPoint = [offerObject objectForKey:@"places_coordinate"];
+                        
+                        MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
+                                                                 init];
+                        
+                        geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
+                        
+                        geoPointAnnotation.title = offerObject[@"companyName"];
+                        
+                        [self.appleMap addAnnotation:geoPointAnnotation];
+                        
+                        NSLog(@"Annotation: %@",geoPointAnnotation);
+                        
+                    }
                 }
-            }
-            
+
+            }];
         }
     }];
     
@@ -276,6 +224,64 @@
 
 
 #pragma mark - MKMapViewDelegate
+
+
+-(void)mapView:(MKMapView *)mapView regionDidChangeAnimated:(BOOL)animated{
+    
+    NSLog(@"latitude delta = %f", mapView.region.span.latitudeDelta);
+    if(mapView.region.span.latitudeDelta < 0.02){
+        NSLog(@"threshold passed");
+        
+        PFGeoPoint *centerPoint = [PFGeoPoint geoPointWithLatitude:mapView.region.center.latitude longitude:mapView.region.center.longitude];
+        
+        // Create Object
+        PFObject *offersLocation = [PFObject objectWithClassName:@"Offers"];
+        
+        //Create a point for markers
+        PFGeoPoint *offersPoint = offersLocation[@"places_coordinate"];
+        
+        // Check current Location
+        NSLog(@"OffersPoint: %@", offersPoint);
+        
+        // Create a query for Places of interest near current location
+        PFQuery *query = [PFQuery queryWithClassName:@"Offers"];
+        
+        [query whereKey:@"places_coordinate" nearGeoPoint:centerPoint withinKilometers:5.0];
+        
+        //NSLog(@"Query: %@",query);
+        
+        // Limit the query
+        query.limit = 10;
+        
+        // Store query in an Array
+        [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+            
+            NSLog(@"Array: %@",objects);
+            
+            
+            for (PFObject *offerObject in objects) {
+                
+                
+                PFGeoPoint *offerPoint = [offerObject objectForKey:@"places_coordinate"];
+                
+                MKPointAnnotation *geoPointAnnotation = [[MKPointAnnotation alloc]
+                                                         init];
+                
+                geoPointAnnotation.coordinate = CLLocationCoordinate2DMake(offerPoint.latitude, offerPoint.longitude);
+                
+                geoPointAnnotation.title = offerObject[@"companyName"];
+                
+                [self.appleMap addAnnotation:geoPointAnnotation];
+                
+                NSLog(@"Annotation: %@",geoPointAnnotation);
+                
+            }
+        }];
+    }
+}
+
+
+
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id<MKAnnotation>)annotation{
     
     MKAnnotationView *pinOffers = [[MKAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:nil];
@@ -314,17 +320,9 @@
     
     
     
-    
-    
 }
 
--(void)viewWillLayoutSubviews{
-    [super viewWillLayoutSubviews];
-    
-    
-    
-//    mapView_.padding = UIEdgeInsetsMake(self.topLayoutGuide.length + 5, 0, self.bottomLayoutGuide.length + 5, 0);
-}
+
 
 
 

@@ -103,14 +103,14 @@
 
         
         PFQuery *companyAreaQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-        [companyAreaQuery whereKey:@"CompanyArea" matchesRegex:regexString modifiers:@"i"];
+        [companyAreaQuery whereKey:@"companyArea" matchesRegex:regexString modifiers:@"i"];
         
         PFQuery *benefitCardQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-        [nameQuery whereKey:@"benifitCard" matchesRegex:regexString modifiers:@"i"];
+        [benefitCardQuery whereKey:@"benefitCard" matchesRegex:regexString modifiers:@"i"];
 
         
         PFQuery *companyStateQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
-        [nameQuery whereKey:@"companyState" matchesRegex:regexString modifiers:@"i"];
+        [companyStateQuery whereKey:@"companyState" matchesRegex:regexString modifiers:@"i"];
 
         
         PFQuery *descriptionQuery = [[PFQuery alloc] initWithClassName:@"Offers"];
@@ -125,12 +125,6 @@
         return  searchQuery;
     }
     
-//    NSArray *results  = [searchQuery findObjects];
-//    
-//    NSLog(@"%@", results);
-//    
-//    
-//    [self.searchResults addObjectsFromArray:results];
     
     return [[PFQuery alloc] initWithClassName:@"Offers"];
 }
