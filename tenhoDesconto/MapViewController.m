@@ -120,9 +120,6 @@
             //Get the placemark
             CLPlacemark *addressPlacemark = placeMarks[0];
             
-             //Get the placemark
-            CLPlacemark *addressPlacemark = placeMarks[0];
-            
             //Zoom the map in appropriately.
             float zoom = 70.0;
             
