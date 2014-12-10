@@ -120,29 +120,54 @@
             //Get the placemark
             CLPlacemark *addressPlacemark = placeMarks[0];
             
+             //Get the placemark
+            CLPlacemark *addressPlacemark = placeMarks[0];
             
-            // some comment to test commits updates
             //Zoom the map in appropriately.
+            float zoom = 70.0;
             
-            float zoom = 45.0;
-            if(addressPlacemark.country){
-                zoom -= 0.0;
-                NSLog(@"País: %@",addressPlacemark.country);
-                
-                if(addressPlacemark.administrativeArea){
-                    zoom -= 38.0;
-                    NSLog(@"Estado: %@",addressPlacemark.administrativeArea);
-                    
-                    if(addressPlacemark.subAdministrativeArea){
-                        zoom -= 4.0;
-                        NSLog(@"Area: %@",addressPlacemark);
-                        
-                        if(addressPlacemark.thoroughfare    ){
-                            zoom -= 2.0;
-                        }
-                    }
-                }
+            if (addressPlacemark.country) {
+                zoom-=25.0; //45
+                NSLog(@"Country: %@",addressPlacemark.country);
             }
+            if (addressPlacemark.administrativeArea){
+                zoom -= 39.0; //6
+                NSLog(@"State: %@",addressPlacemark.administrativeArea);
+            }
+            if (addressPlacemark.locality) {
+                zoom -= 5.8; //0.2
+                NSLog(@"City: %@",addressPlacemark.locality);
+            }
+            if (addressPlacemark.subLocality) {
+                zoom += 5.0 - 5.15; //0.05
+                NSLog(@"Area: %@",addressPlacemark.subLocality);
+            }
+            if (addressPlacemark.thoroughfare){
+                zoom -= 0.04;
+                NSLog(@"Street: %@",addressPlacemark.thoroughfare);
+            }
+            
+            // //Zoom the map in appropriately.
+            
+            // float zoom = 45.0;
+            // if(addressPlacemark.country){
+            //     zoom -= 0.0;
+            //     NSLog(@"País: %@",addressPlacemark.country);
+                
+            //     if(addressPlacemark.administrativeArea){
+            //         zoom -= 38.0;
+            //         NSLog(@"Estado: %@",addressPlacemark.administrativeArea);
+                    
+            //         if(addressPlacemark.subAdministrativeArea){
+            //             zoom -= 4.0;
+            //             NSLog(@"Area: %@",addressPlacemark);
+                        
+            //             if(addressPlacemark.thoroughfare    ){
+            //                 zoom -= 2.0;
+            //             }
+            //         }
+            //     }
+            // }
             
             NSLog(@"Zoom = %f", zoom);
             MKCoordinateRegion coordinateRegion = MKCoordinateRegionMake(addressPlacemark.location.coordinate, MKCoordinateSpanMake(zoom, zoom));
