@@ -56,6 +56,7 @@
 //    PFObject *profile = [PFObject objectWithClassName:@"User"];
     
     [self.cancelBarButtonItem setEnabled:NO];
+    [self.cancelBarButtonItem setTintColor:[UIColor clearColor]];
   
     PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
@@ -115,7 +116,29 @@
     self.accountStateTextField.enabled =
     self.accountCountryTextField.enabled = YES;
     
+    
     [self.cancelBarButtonItem setEnabled:YES];
+    [self.cancelBarButtonItem setTintColor:nil];
+    
+}
+
+- (IBAction)performCancel:(id)sender {
+    
+    self.accountNameTextField.enabled =
+    self.accountEmailTextField.enabled =
+    self.accountPsswdTextField.enabled =
+    self.accountBdayTextField.enabled =
+    self.accountGenderTextField.enabled =
+    self.accountCityTextField.enabled =
+    self.accountStateTextField.enabled =
+    self.accountCountryTextField.enabled = NO;
+    
+    [self.cancelBarButtonItem setEnabled:NO];
+    [self.cancelBarButtonItem setTintColor:[UIColor clearColor]];
+    
+    NSLog(@"Touched: %@",self.cancelBarButtonItem);
+    
+    
     
 }
 @end

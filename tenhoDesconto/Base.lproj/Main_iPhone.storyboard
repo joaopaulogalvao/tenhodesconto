@@ -932,7 +932,11 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Minha Conta" image="config" id="HC8-s2-xQo"/>
                     <navigationItem key="navigationItem" title="Minha Conta" id="sSd-Y9-w8x">
-                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="PiJ-hL-nMI"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancelar" id="PiJ-hL-nMI">
+                            <connections>
+                                <action selector="performCancel:" destination="Jdx-fu-SnG" id="LPd-JC-Vwa"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Editar" id="8Sa-ws-5On">
                             <connections>
                                 <action selector="performEditing:" destination="Jdx-fu-SnG" id="K82-9X-YLb"/>

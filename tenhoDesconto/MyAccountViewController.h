@@ -34,5 +34,6 @@
 
 - (IBAction)performLogout:(id)sender;
 - (IBAction)performEditing:(id)sender;
+- (IBAction)performCancel:(id)sender;
 
 @end
