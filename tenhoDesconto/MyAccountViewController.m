@@ -136,6 +136,7 @@
     [self.cancelBarButtonItem setEnabled:NO];
     [self.cancelBarButtonItem setTintColor:[UIColor clearColor]];
     
+    //The button was touched
     NSLog(@"Touched: %@",self.cancelBarButtonItem);
     
     
