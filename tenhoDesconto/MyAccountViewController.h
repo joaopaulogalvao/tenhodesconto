@@ -28,6 +28,7 @@
 
 @property (weak, nonatomic) IBOutlet UIScrollView *accountScroll;
 
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelBarButtonItem;
 
 @property (nonatomic, strong) UITapGestureRecognizer *accountGestureRecognizer;
 

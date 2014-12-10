@@ -54,6 +54,8 @@
 //    [query whereKey:@"name" equalTo:[PFUser currentUser]];
     
 //    PFObject *profile = [PFObject objectWithClassName:@"User"];
+    
+    [self.cancelBarButtonItem setEnabled:NO];
   
     PFQuery *query = [PFQuery queryWithClassName:@"Usuario"];
     [query getFirstObjectInBackgroundWithBlock:^(PFObject *object, NSError *error) {
@@ -103,6 +105,18 @@
 }
 
 - (IBAction)performEditing:(id)sender {
+    
+    self.accountNameTextField.enabled =
+    self.accountEmailTextField.enabled =
+    self.accountPsswdTextField.enabled =
+    self.accountBdayTextField.enabled =
+    self.accountGenderTextField.enabled =
+    self.accountCityTextField.enabled =
+    self.accountStateTextField.enabled =
+    self.accountCountryTextField.enabled = YES;
+    
+    [self.cancelBarButtonItem setEnabled:YES];
+    
 }
 @end
 
