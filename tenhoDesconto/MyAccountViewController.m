@@ -172,6 +172,43 @@
     NSLog(@"Save Touched: %@",self.saveButton);
     
     
+    if ([self.accountNameTextField.text length]||
+               [self.accountEmailTextField.text length]||
+               [self.accountPsswdTextField.text length]||
+               [self.accountBdayTextField.text length]||
+               [self.accountGenderTextField.text length]||
+               [self.accountCityTextField.text length]||
+               [self.accountStateTextField.text length]||
+               [self.accountCountryTextField.text length] == 0){
+        
+        //If any field is empty
+        UIAlertView *emptyAlert = [[UIAlertView alloc]initWithTitle:@"Alerta:"
+                                                            message:@"Confira seus dados e tente novamente!"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+        
+        [emptyAlert show];
+
+    
+    } else  {
+        
+        
+        UIAlertView *savedAlert = [[UIAlertView alloc]initWithTitle:@"Sucesso:"
+                                                            message:@"Seus dados foram salvos!"
+                                                           delegate:self
+                                                  cancelButtonTitle:@"Ok"
+                                                  otherButtonTitles:nil, nil];
+        
+        [savedAlert show];
+        
+        
+    }
+
+    
+   
+    
+    
 }
 
 
