@@ -25,12 +25,12 @@
             </objects>
             <point key="canvasLocation" x="595" y="-471"/>
         </scene>
-        <!--Ofertas Próximas-->
+        <!--Near Me-->
         <scene sceneID="LtX-lu-TDE">
             <objects>
                 <navigationController definesPresentationContext="YES" id="HQA-Dh-rhM" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Ofertas Próximas" image="map" id="oeU-5C-5kK"/>
+                    <tabBarItem key="tabBarItem" title="Near Me" image="map" id="oeU-5C-5kK"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="I3P-ed-JPr">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -42,7 +42,7 @@
             </objects>
             <point key="canvasLocation" x="624" y="-1238"/>
         </scene>
-        <!--Ofertas Próximas-->
+        <!--Near Me-->
         <scene sceneID="GEh-y6-i5d">
             <objects>
                 <viewController id="m8l-Ei-Bau" customClass="MapViewController" sceneMemberID="viewController">
@@ -80,8 +80,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ofertas Próximas" image="map" id="QQp-pM-T4B"/>
-                    <navigationItem key="navigationItem" title="Ofertas Próximas" id="VwR-sk-haV">
+                    <tabBarItem key="tabBarItem" title="Near Me" image="map" id="QQp-pM-T4B"/>
+                    <navigationItem key="navigationItem" title="Near Me" id="VwR-sk-haV">
                         <barButtonItem key="rightBarButtonItem" systemItem="search" id="P4O-mm-lf6">
                             <connections>
                                 <action selector="search" destination="m8l-Ei-Bau" id="XTe-VY-97I"/>
@@ -611,12 +611,12 @@
             </objects>
             <point key="canvasLocation" x="-737" y="436"/>
         </scene>
-        <!--Contato-->
+        <!--Contact-->
         <scene sceneID="MNN-rF-nZS">
             <objects>
                 <navigationController definesPresentationContext="YES" id="hZc-nL-Gr2" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Contato" image="comment_full" id="wIJ-lN-N7o"/>
+                    <tabBarItem key="tabBarItem" title="Contact" image="comment_full" id="wIJ-lN-N7o"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uK1-WO-9mE">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -644,7 +644,7 @@
             </objects>
             <point key="canvasLocation" x="595" y="1320"/>
         </scene>
-        <!--Busca-->
+        <!--Search-->
         <scene sceneID="Ydf-WA-pHr">
             <objects>
                 <tableViewController id="kkA-67-1e7" customClass="SearchViewController" sceneMemberID="viewController">
@@ -677,7 +677,7 @@
                             <outlet property="delegate" destination="kkA-67-1e7" id="Fry-zs-mIM"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Busca" id="wip-Tl-pSi"/>
+                    <navigationItem key="navigationItem" title="Search" id="wip-Tl-pSi"/>
                     <connections>
                         <outlet property="search" destination="bzp-DL-Mzm" id="G2x-xM-Jew"/>
                     </connections>
@@ -686,7 +686,7 @@
             </objects>
             <point key="canvasLocation" x="1105" y="1312"/>
         </scene>
-        <!--Contato-->
+        <!--Contact-->
         <scene sceneID="sDZ-5T-c92">
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="kqp-Fy-auh" sceneMemberID="viewController">
@@ -762,8 +762,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Contato" image="comment_full" id="bHz-OU-Fty"/>
-                    <navigationItem key="navigationItem" title="Contato" id="7R0-lE-rPn">
+                    <tabBarItem key="tabBarItem" title="Contact Us" image="comment_full" id="bHz-OU-Fty"/>
+                    <navigationItem key="navigationItem" title="Contact" id="7R0-lE-rPn">
                         <barButtonItem key="rightBarButtonItem" title="Enviar" id="HY2-dR-PVB"/>
                     </navigationItem>
                 </viewController>
@@ -771,12 +771,12 @@
             </objects>
             <point key="canvasLocation" x="1075" y="2284"/>
         </scene>
-        <!--Minha Conta-->
+        <!--My Account-->
         <scene sceneID="SUU-tV-sTQ">
             <objects>
                 <navigationController definesPresentationContext="YES" id="VwN-vu-0zx" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
-                    <tabBarItem key="tabBarItem" title="Minha Conta" image="config" id="JyM-c2-qwW"/>
+                    <tabBarItem key="tabBarItem" title="My Account" image="config" id="JyM-c2-qwW"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pc6-F5-fSp">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -788,7 +788,7 @@
             </objects>
             <point key="canvasLocation" x="733" y="428"/>
         </scene>
-        <!--Minha Conta-->
+        <!--My Account-->
         <scene sceneID="gHE-fX-GVJ">
             <objects>
                 <viewController autoresizesArchivedViewToFullSize="NO" automaticallyAdjustsScrollViewInsets="NO" id="Jdx-fu-SnG" customClass="MyAccountViewController" sceneMemberID="viewController">
@@ -930,8 +930,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Minha Conta" image="config" id="HC8-s2-xQo"/>
-                    <navigationItem key="navigationItem" title="Minha Conta" id="sSd-Y9-w8x">
+                    <tabBarItem key="tabBarItem" title="My Account" image="config" id="HC8-s2-xQo"/>
+                    <navigationItem key="navigationItem" title="My Account" id="sSd-Y9-w8x">
                         <barButtonItem key="leftBarButtonItem" title="Cancelar" id="PiJ-hL-nMI">
                             <connections>
                                 <action selector="performCancel:" destination="Jdx-fu-SnG" id="LPd-JC-Vwa"/>
