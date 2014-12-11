@@ -30,10 +30,11 @@
 
 @property (weak, nonatomic) IBOutlet UIBarButtonItem *cancelBarButtonItem;
 
+
 @property (nonatomic, strong) UITapGestureRecognizer *accountGestureRecognizer;
 
 - (IBAction)performLogout:(id)sender;
-- (IBAction)performEditing:(id)sender;
+- (void)performEditing:(id)sender;
 - (IBAction)performCancel:(id)sender;
 
 @end

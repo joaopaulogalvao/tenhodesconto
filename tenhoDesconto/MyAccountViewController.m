@@ -10,6 +10,10 @@
 #import <Parse/Parse.h>
 
 @interface MyAccountViewController ()
+@property (nonatomic, strong)NSArray *extraButtons;
+@property (nonatomic, strong)UIBarButtonItem *saveButton;
+@property (nonatomic,strong) UIBarButtonItem *editBarButtonItem;
+
 
 @end
 
@@ -45,15 +49,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-//    self.accountScroll.scrollEnabled = YES;
-    
-//    PFUser* user;
-    
-    
-    
-//    [query whereKey:@"name" equalTo:[PFUser currentUser]];
-    
-//    PFObject *profile = [PFObject objectWithClassName:@"User"];
+//  self.accountScroll.scrollEnabled = YES;
     
     [self.cancelBarButtonItem setEnabled:NO];
     [self.cancelBarButtonItem setTintColor:[UIColor clearColor]];
@@ -73,30 +69,26 @@
         
         NSLog(@"%@", object);
     }];
-     
-        
-  
-
+    
+    //Enable SaveButton
+    self.editBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Editar" style:UIBarButtonItemStylePlain target:self action:@selector(performEditing:)];
+    
+    //Store in an Array
+    self.extraButtons = @[self.editBarButtonItem];
+    
+    //Place into navigation Bar
+    self.navigationItem.rightBarButtonItems = self.extraButtons;
     
 
-//        self.accountEmailTextField.text = [NSString stringWithFormat:@"%@",[profile objectForKey:@"email"]];
+//    self.accountEmailTextField.text = [NSString stringWithFormat:@"%@",[profile objectForKey:@"email"]];
    
-    
-
-    
-
-    
-    
- 
-//    
 //    self.automaticallyAdjustsScrollViewInsets = NO;
-
-    
-    
     
 //    [self.accountScroll setFrame:CGRectMake(0.0, 0.0, 0.0, 1300.0)];
+    
 }
 
+#pragma mark - My Account Actions
 
 - (IBAction)performLogout:(id)sender {
     
@@ -105,8 +97,11 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-- (IBAction)performEditing:(id)sender {
+- (void)performEditing:(id)sender {
     
+    NSLog(@"Edit touched: %@",self.editBarButtonItem);
+    
+    // Enable all fields for editing
     self.accountNameTextField.enabled =
     self.accountEmailTextField.enabled =
     self.accountPsswdTextField.enabled =
@@ -116,13 +111,27 @@
     self.accountStateTextField.enabled =
     self.accountCountryTextField.enabled = YES;
     
-    
+    //Show Cancel Button
     [self.cancelBarButtonItem setEnabled:YES];
     [self.cancelBarButtonItem setTintColor:nil];
+    
+    //Disable Edit Button
+    [self.editBarButtonItem setEnabled:NO];
+    [self.editBarButtonItem setTintColor:[UIColor clearColor]];
+    
+    //Enable SaveButton
+    self.saveButton = [[UIBarButtonItem alloc]initWithTitle:@"Salvar" style:UIBarButtonItemStylePlain target:self action:@selector(saveEditions)];
+    
+    //Store in an Array
+    self.extraButtons = @[self.saveButton];
+    
+    //Place into navigation Bar
+    self.navigationItem.rightBarButtonItems = self.extraButtons;
     
 }
 
 - (IBAction)performCancel:(id)sender {
+    
     
     self.accountNameTextField.enabled =
     self.accountEmailTextField.enabled =
@@ -137,11 +146,35 @@
     [self.cancelBarButtonItem setTintColor:[UIColor clearColor]];
     
     //The button was touched
-    NSLog(@"Touched: %@",self.cancelBarButtonItem);
+    NSLog(@"Cancel Touched: %@",self.cancelBarButtonItem);
     
+    //Disable Save Button
+    [self.saveButton setEnabled:NO];
+    [self.saveButton setTintColor:[UIColor clearColor]];
+    
+    //Enable EditButton
+    self.editBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Editar" style:UIBarButtonItemStylePlain target:self action:@selector(performEditing:)];
+    
+    //Store in an Array
+    self.extraButtons = @[self.editBarButtonItem];
+    
+    //Place into navigation Bar
+    self.navigationItem.rightBarButtonItems = self.extraButtons;
+    
+    NSLog(@"ButtonsArray %@",self.extraButtons);
+    
+
+    
+}
+
+- (void)saveEditions{
+    
+    NSLog(@"Save Touched: %@",self.saveButton);
     
     
 }
+
+
 @end
 
 

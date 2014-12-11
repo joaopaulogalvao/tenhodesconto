@@ -937,11 +937,6 @@
                                 <action selector="performCancel:" destination="Jdx-fu-SnG" id="LPd-JC-Vwa"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Editar" id="8Sa-ws-5On">
-                            <connections>
-                                <action selector="performEditing:" destination="Jdx-fu-SnG" id="K82-9X-YLb"/>
-                            </connections>
-                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="accountBdayTextField" destination="D37-xA-J6w" id="3uz-KC-OKe"/>
